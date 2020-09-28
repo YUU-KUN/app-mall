@@ -4,6 +4,7 @@
   "description": "Muhammad Khafid Ali Hamka",
   "main": "app.js",
   "scripts": {
+
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +27,7 @@
     "express-session": "^1.17.1",
     "mongoose": "^5.10.7",
     "path": "^0.12.7",
+    "pug": "^3.0.0",
     "redis": "^3.0.2"
   },
   "devDependencies": {

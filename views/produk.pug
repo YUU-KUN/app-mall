@@ -1,0 +1,44 @@
+extends ./layout.pug
+
+block title
+  title List Produk
+block content
+  div.container
+    div.row
+      div.col-xs-6.col-md-1
+      div.col-xs-6.col-md-10
+        p
+          a.class(href='/tambah/produk')
+            button(type="button").btn.btn-primary Add
+        p
+        h3 
+        table.table.table-bordered.table-striped.table-hover
+          thead
+            tr
+              th.text-center Nama Produk
+              th.text-center Deskripsi
+              th.text-center Kategori
+              th.text-center Harga Jual
+              th.text-center Harga Beli
+              th.text-center Laba
+              th.text-center Stok 
+              th.text-center Aksi
+          tbody
+            each produk in produks
+              tr
+                td #{produk.nama}
+                td #{produk.deskripsi}
+                td #{produk.kateogri}
+                td #{produk.jual}
+                td #{produk.beli}
+                td #{produk.laba}
+                td #{poduk.stok}
+                td.text-center
+                  a.class(href='/edit/produk/#{produk.idProduk}')
+                    button(type="button").btn.btn-success Edit
+                  a.class(href='/delete/produk/#{produk.idProduk}', onclick='return confirm("Apakah anda ingin menghapus data ?")')
+                    button(type="button").btn.btn-danger Delete
+        p
+            a.class(href='/logout')
+              button(type="button").btn.btn-primary Logout
+      div.col-xs-6.col-md-4
