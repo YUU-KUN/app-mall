@@ -4,8 +4,8 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    res.render('login')
+    res.render('template/index')
+    console.log('render Index harusnya');
 })
-
 
 module.exports = router
