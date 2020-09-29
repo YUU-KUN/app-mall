@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 
 
-app.set('view engine', 'ejs');
+app.set('view engine', 'hbs');
 // app.set('views', path.join(__dirname, 'views/template'))
 // app.use(express.static('views/template'));
 
