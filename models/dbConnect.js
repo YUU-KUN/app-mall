@@ -9,5 +9,6 @@ module.exports = mongoose.connect('mongodb+srv://team2:5MwItjLEhPHWsEiz@percobaa
     console.log('Connected to DB');
 }).catch(err =>{
     console.log('Something wrong with the connection');
+    console.log(err);
     process.exit()
 })

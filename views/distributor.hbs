@@ -53,7 +53,7 @@
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
 
-                        
+
 
                         <li>
                             <a href="table.html">
@@ -284,7 +284,7 @@
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
-                <!-- Modal -->
+                <!-- Modal Tambah Distributor-->
                 <div class="modal fade" id="modalAddDistributor" tabindex="-1" role="dialog"
                     aria-labelledby="modalAddDistributorTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -338,8 +338,8 @@
                                                     <input id="x_card_code" name="pemilik" type="text"
                                                         class="form-control cc-cvc" value="" data-val="true"
                                                         data-val-required="Mohon isi Nama Pemilik"
-                                                        data-val-cc-cvc="Mohon isi dengan Huruf"
-                                                        autocomplete="off" placeholder="Nama Pemilik">
+                                                        data-val-cc-cvc="Mohon isi dengan Huruf" autocomplete="off"
+                                                        placeholder="Nama Pemilik">
 
                                                 </div>
                                             </div>
@@ -358,6 +358,84 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Modal Edit Distributor-->
+                <div class="modal fade" id="modalEditDistributor" tabindex="-1" role="dialog"
+                    aria-labelledby="modalEditDistributorTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Edit Distributor </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3 class="text-center title-2">Form Edit Distributor</h3>
+                                    </div>
+                                    <hr>
+                                    <form action="/distributor/edit/{{data._id}}" method="post" novalidate="novalidate">
+                                        <div class="form-group">
+                                            <label for="cc-payment" class="control-label mb-1">Nama</label>
+                                            <input id="cc-pament" name="nama" type="text" class="form-control"
+                                                value="{{data.nama}}" aria-required="true" aria-invalid="false"
+                                                placeholder="Nama Distributor">
+                                        </div>
+                                        <div class="form-group has-success">
+                                            <label for="cc-name" class="control-label mb-1">Alamat</label>
+                                            <input id="cc-name" name="alamat" type="text"
+                                                class="form-control cc-name valid" value="{{this.alamat}}"
+                                                data-val="true" data-val-required="Mohon isi Alamat Distributor"
+                                                autocomplete="cc-name" aria-required="true" aria-invalid="false"
+                                                aria-describedby="cc-name-error" placeholder="Alamat Distributor">
+                                            <span class="help-block field-validation-valid" data-valmsg-for="cc-name"
+                                                data-valmsg-replace="true"></span>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label mb-1">Nomor HP</label>
+                                                    <input id="cc-exp" name="noHp" type="number"
+                                                        class="form-control cc-exp" value="{{this.noHp}}"
+                                                        data-val="true"
+                                                        data-val-required="Mohon isi Nomor Handphone Distributor"
+                                                        data-val-cc-exp="Mohon isi dengan Angka"
+                                                        placeholder="Nomor Handphone Distributor" autocomplete="cc-exp">
+                                                    <span class="help-block" data-valmsg-for="cc-exp"
+                                                        data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="x_card_code" class="control-label mb-1">Pemilik</label>
+                                                <div class="input-group">
+                                                    <input id="x_card_code" name="pemilik" type="text"
+                                                        class="form-control cc-cvc" value="{{pemilik}}"
+                                                        data-val="true" data-val-required="Mohon isi Nama Pemilik"
+                                                        data-val-cc-cvc="Mohon isi dengan Huruf" autocomplete="off"
+                                                        placeholder="Nama Pemilik">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <button id="payment-button" type="submit"
+                                                class="btn btn-lg btn-info btn-block">
+                                                <i class="fa fa-paper-plane fa-lg"></i>&nbsp;
+                                                <span>Simpan</span>
+                                                {{!-- <span id="payment-button-sending" style="display:none;">Sending…</span> --}}
+                                            </button>
+                                        </div>
+                                        {{!-- {{/each}} --}}
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
 
@@ -384,7 +462,7 @@
                                                 <th></th>
                                             </tr>
                                         </thead>
-                                        <tbody> 
+                                        <tbody>
                                             {{#each data}}
                                             <tr>
                                                 <td>{{this.nama}}</td>
@@ -393,16 +471,16 @@
                                                 <td>{{this.pemilik}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
+                                                        <button class="item" data-toggle="modal"
+                                                            data-target="#modalEditDistributor" data-placement="top"
                                                             title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
-                                                        
-                                                        <a href="/distributor/hapus/{{this.id}}">
-                                                        <button class="item" data-toggle="tooltip" data-target="" data-placement="top"
-                                                            title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button></a>
+
+                                                        <a href="/distributor/hapus/{{this._id}}">
+                                                            <button class="item" data-placement="top" title="Delete">
+                                                                <i class="zmdi zmdi-delete"></i>
+                                                            </button></a>
                                                     </div>
                                                 </td>
                                             </tr>

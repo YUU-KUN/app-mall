@@ -25,25 +25,28 @@ router.post("/tambah", async(req, res) => {
     });
     try {
         const newDistributor = await distributor.save();
-        res.status(201).json({ message: "Berhasil Tambah Data Distributor", newDistributor });
+        // res.status(201).json({ message: "Berhasil Tambah Data Distributor", newDistributor });
+        res.redirect('/distributor')
     } catch (err) {
         res.status(400).json({message: err.message});
     }
 });
 
-router.put("/edit/:id", getDistributor, async(req, res) => {
+router.post("/edit/:id", getDistributor, async(req, res) => {
     try {
         const editDistributor = await res.distributor.set(req.body);
         res.json({ message: "Berhasil Mengubah Data Distributor", editDistributor});
+        // res.redirect('/distributor')
     } catch (err) {
         res.status(400).json({message: err.message});
     }
 });
 
-router.delete("/hapus/:id", getDistributor, async(req, res) => {
+router.get("/hapus/:id", getDistributor, async(req, res) => {
     try {
         await res.distributor.deleteOne();
-        res.json({ message: "Berhasil Menghapus Data Distributor" });
+        // res.json({ message: "Berhasil Menghapus Data Distributor" });
+        res.redirect('/distributor')
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
