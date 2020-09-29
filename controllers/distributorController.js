@@ -6,7 +6,7 @@ const Distributor = require('../models/distributorModel');
 router.get("/", async(req, res) => {
     try {
         const distributor = await Distributor.find();
-        res.render('template/distributor', {
+        res.render('distributor', {
             data: distributor
         })
         // res.json(distributor);
