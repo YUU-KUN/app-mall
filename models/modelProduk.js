@@ -5,10 +5,10 @@ const schemaProduk = mongoose.Schema({
     deskripsi: {type: String},
     kategori: {type: String},
     subKategori: {type: String},
-    stok: {type:Number},
+    stok: {type: Number},
     hargaBeli:{type: Number},
     hargaJual: {type:Number},
-    laba:{type:Number},
+    laba: {type: Number},
     active:{type: Boolean, default: true},
     createdAt:{type: Date},
     deleteOn:{type: Date,default: null}
