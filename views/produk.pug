@@ -9,7 +9,7 @@ block content
       div.col-xs-6.col-md-10
         p
           a.class(href='/tambah/produk')
-            button(type="button").btn.btn-primary Add
+            button(type="button").btn.btn-primary Tambah
         p
         h3 
         table.table.table-bordered.table-striped.table-hover
@@ -35,9 +35,9 @@ block content
                 td #{produk.stok}
                 td.text-center
                   a.class(href='/edit/produk/#{produk.idProduk}')
-                    button(type="button").btn.btn-success Edit
+                   button(type="button").btn.btn-success Edit
                   a.class(href='/delete/produk/#{produk.idProduk}', onclick='return confirm("Apakah anda ingin menghapus data ?")')
-                    button(type="button").btn.btn-danger Delete
+                   button(type="button").btn.btn-danger Delete
         p
             a.class(href='/logout')
               button(type="button").btn.btn-primary Logout
