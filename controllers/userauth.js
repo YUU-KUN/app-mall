@@ -3,7 +3,8 @@ const User = require('../models/user')
 const router = express.Router()
 
 router.get('/login',(req,res)=>{
-    res.send('login')
+    // res.send('login')
+    res.render('login')
 })
 
 router.post('/login',async(req,res)=>{
@@ -24,6 +25,11 @@ router.post('/login',async(req,res)=>{
     } catch (err) {
         
     }
+})
+
+router.get('/register',(req,res)=>{
+    // res.send('login')
+    res.render('register')
 })
 
 router.post('/register',async (req,res)=>{

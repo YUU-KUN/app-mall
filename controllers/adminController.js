@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const produk = await client.get("/produk");
     const kategori = await client.get("/kategori");
     res.json({
-        produk:produk.body,
+        produk:produk.body, 
         kategori:kategori.body
     })
 })
