@@ -38,15 +38,25 @@ router.post('/add', async (req, res) => {
         const tambahProduk = await produk.save()
         // res.status(200).json({message: 'Berhasil',data: tambahProduk})
         res.redirect('/produk')
-    } catch (err) {
-        res.status(400).json({ message: 'error', error: err.message })
+    }catch(err){
+        res.status(400).json({message: 'error', error: err.message})
     }
 })
 
-router.get("/edit/:id", async (req, res) => {
+router.get("/edit/:id", async(req, res) => {
     try {
-        const produk = await Produk.findByIdAndUpdate({ _id: req.params.id, active: true })
+        const produk = await Produk.find({_id: req.params.id, active:true})
         res.render("editProduk", { data: produk });
+    } catch (err) {
+        res.status(400).json({message: 'error', error: err.message});
+    }
+})
+
+router.post("/update/:id", async(req, res) => {
+    try {
+        const editProduk = await Produk.findByIdAndUpdate({_id: req.params.id, active:true},req.body)
+        // res.json({ message: "Berhasil Mengubah Data Distributor", data: editProduk});
+        res.redirect('/produk')
     } catch (err) {
         res.status(400).json({ message: 'error', error: err.message });
     }
@@ -73,10 +83,9 @@ router.put("/softdelete/:id", async (req, res) => {
     }
 })
 
-
-router.get("/delete/:id", async (req, res) => {
+router.get("/delete/:id", async(req, res) => {
     try {
-        await Produk.deleteOne({ _id: req.params.id });
+        await Produk.deleteOne({_id:req.params.id});
         // res.json({ message: "Berhasil Menghapus Data Distributor" });
         res.redirect('/produk')
     } catch (err) {

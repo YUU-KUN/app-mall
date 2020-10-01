@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Kurir = require('../models/kurirModel');
 
-
 router.get("/", async(req, res) => {
     try {
         const kurir = await Kurir.find();

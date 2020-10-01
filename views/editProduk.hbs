@@ -7,7 +7,11 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
+<<<<<<< HEAD
     <title>Edit Produk</title> 
+=======
+    <title>Tables</title>
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
 
     <!-- Fontfaces CSS-->
     <link href="template/css/font-face.css" rel="stylesheet" media="all">
@@ -21,10 +25,17 @@
     <!-- Vendor CSS-->
     <link href="template/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
     <link href="template/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+<<<<<<< HEAD
     <!-- <link href="vendor/wow/animate.css" rel="stylesheet" media="all"> -->
     <link href="template/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
     <link href="template/vendor/slick/slick.css" rel="stylesheet" media="all">
     <!-- <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all"> -->
+=======
+    <!-- <link href="template/vendor/wow/animate.css" rel="stylesheet" media="all"> -->
+    <link href="template/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="template/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <!-- <link href="template/vendor/select2/select2.min.css" rel="stylesheet" media="all"> -->
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
     <link href="template/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
@@ -39,8 +50,12 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
+<<<<<<< HEAD
                             {{!-- <img src="images/icon/logo.png" alt="CoolAdmin" /> --}}
                             <img src="template/images/icon/logo.png" alt="CoolAdmin"/>
+=======
+                            <img src="template/images/icon/logo.png" alt="CoolAdmin" />
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -143,12 +158,20 @@
                         </li>
 
                         <li class="active">
+<<<<<<< HEAD
                             <a href="table.html">
+=======
+                            <a href="/distributor">
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                 <i class="fas fa-table"></i>Distributor</a>
                         </li>
 
                         <li>
+<<<<<<< HEAD
                             <a href="produk.html">
+=======
+                            <a href="/produk">
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                 <i class="fas fa-table"></i>Produk</a>
                         </li>
 
@@ -286,10 +309,18 @@
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <!-- Modal -->
+<<<<<<< HEAD
                 {{!-- <div class="modal fade" id="modalEditProduk" tabindex="-1" role="dialog"
                     aria-labelledby="modalAddProdukTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content"> --}}
+=======
+
+                <div class="modal fade" id="modalEditProduk" tabindex="-1" role="dialog"
+                    aria-labelledby="modalAddProdukTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLongTitle">produk table </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -302,18 +333,33 @@
                                         <h3 class="text-center title-2">Form Edit Produk</h3>
                                     </div>
                                     <hr>
+<<<<<<< HEAD
                                     {{!-- {{#each data}} --}}
                                     <form action="/produk/update/{{data.id}}" method="post" novalidate="novalidate">
                                         <div class="form-group">
                                             <label for="cc-payment" class="control-label mb-1">Nama Produk</label>
                                             <input id="cc-pament" name="nama" value="{{data.nama}}" type="text" class="form-control"
                                                 aria-required="true" aria-invalid="false" 
+=======
+                                    {{#each data}}
+                                    <form action="/produk/update/{{this.id}}" method="post" novalidate="novalidate">
+                                    
+                                        <div class="form-group">
+                                            <label for="cc-payment" class="control-label mb-1">Nama Produk</label>
+                                            <input id="cc-pament" name="nama" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" value="{{this.nama}}"
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                                 placeholder="Nama Produk">
                                         </div>
                                         <div class="form-group has-success">
                                             <label for="cc-name" class="control-label mb-1">Deskripsi</label>
+<<<<<<< HEAD
                                             <input id="cc-name" name="deskripsi" type="text" value="{{data.deskripsi}}"
                                                 class="form-control cc-name valid" data-val="true"
+=======
+                                            <input id="cc-name" name="deskripsi" type="text"
+                                                class="form-control cc-name valid" value="{{this.deskripsi}}" data-val="true"
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                                 data-val-required="Mohon isi Deskripsi Produk" autocomplete="cc-name"
                                                 aria-required="true" aria-invalid="false"
                                                 aria-describedby="cc-name-error" placeholder="Deskripsi Produk">
@@ -327,7 +373,11 @@
                                                 <div class="form-group">
                                                     <label for="cc-exp" class="control-label mb-1">Kategori</label>
                                                     <select id="cc-exp" name="kategori" type="text"
+<<<<<<< HEAD
                                                         class="form-control cc-exp" value="{{data.kategori}}" data-val="true"
+=======
+                                                        class="form-control cc-exp" value="" data-val="true"
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                                         data-val-required="Mohon isi Kategori Produk"
                                                         {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
                                                         placeholder="Kategori Produk" autocomplete="cc-exp">
@@ -341,16 +391,27 @@
                                             <div class="col-6">
                                                 <label for="x_card_code" class="control-label mb-1">Sub Kategori</label>
                                                 <div class="input-group">
+<<<<<<< HEAD
                                                     <select id="x_card_code" name="subKategori" type="text"
                                                         class="form-control cc-cvc" value="{{data.subKategori}}" data-val="true"
                                                         data-val-required="Mohon isi Sub Kategori"
                                                         {{!-- data-val-cc-cvc="Mohon isi denggan Huruf" --}}
                                                         autocomplete="off" placeholder="Sub Kategori Produk">
+=======
+                                                    <select id="cc-exp" name="kategori" type="text"
+                                                        class="form-control cc-exp" value="" data-val="true"
+                                                        data-val-required="Mohon isi Kategori Produk"
+                                                        {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
+                                                        placeholder="Kategori Produk" autocomplete="cc-exp">
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                                         <option>Tsel</option>
                                                         <option>Im3</option>
                                                         <option>By. U</option>
                                                     </select>
+<<<<<<< HEAD
 
+=======
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                                 </div>
                                             </div>
                                         </div>
@@ -360,7 +421,11 @@
                                                 <div class="form-group">
                                                     <label for="cc-exp" class="control-label mb-1">Harga Jual</label>
                                                     <input id="cc-exp" name="hargaJual" type="number"
+<<<<<<< HEAD
                                                         class="form-control cc-exp" value="{{data.hargaJual}}" data-val="true"
+=======
+                                                        class="form-control cc-exp" value="{{this.hargaJual}}" data-val="true"
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                                         data-val-required="Mohon isi Harga Jual"
                                                         data-val-cc-exp="Mohon isi dengan Angka"
                                                         placeholder="Harga Jual Produk" autocomplete="cc-exp">
@@ -372,10 +437,18 @@
                                                 <label for="x_card_code" class="control-label mb-1">Harga Beli</label>
                                                 <div class="input-group">
                                                     <input id="x_card_code" name="hargaBeli" type="number"
+<<<<<<< HEAD
                                                         class="form-control cc-cvc" value="{{data.hargaBeli}}" data-val="true"
                                                         data-val-required="Mohon isi Harga Beli"
                                                         data-val-cc-cvc="Mohon isi dengan Angka"
                                                         autocomplete="off" placeholder="Harga Beli Produk">
+=======
+                                                        class="form-control cc-cvc" value="{{this.hargaBeli}}" data-val="true"
+                                                        data-val-required="Mohon isi Harga Beli"
+                                                        data-val-cc-cvc="Mohon isi dengan Angka"
+                                                        autocomplete="off" placeholder="Harga Beli Produk">
+
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                                 </div>
                                             </div>
                                         </div>
@@ -384,7 +457,11 @@
                                                 <div class="form-group">
                                                     <label for="cc-exp" class="control-label mb-1">Stok</label>
                                                     <input id="cc-exp" name="stok" type="number"
+<<<<<<< HEAD
                                                         class="form-control cc-exp" value="{{data.stok}}" data-val="true"
+=======
+                                                        class="form-control cc-exp" value="{{this.stok}}" data-val="true"
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                                         data-val-required="Mohon isi Stok Produk"
                                                         data-val-cc-exp="Mohon isi dengan Angka"
                                                         placeholder="Stok Produk" autocomplete="cc-exp">
@@ -392,8 +469,23 @@
                                                         data-valmsg-replace="true"></span>
                                                 </div>
                                             </div>
+<<<<<<< HEAD
                                         </div>
 
+=======
+                                            {{!-- <div class="col-6">
+                                                <label for="x_card_code" class="control-label mb-1">Laba</label>
+                                                <div class="input-group">
+                                                    <input id="x_card_code" name="laba" type="text"
+                                                        class="form-control cc-cvc" value="" data-val="true"
+                                                        data-val-required="Mohon isi Laba"
+                                                        data-val-cc-cvc="Mohon isi dengan Angka"
+                                                        autocomplete="off" placeholder="Laba Produk">
+                                                </div>
+                                            </div> --}}
+                                        </div>
+                                        
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                         <div>
                                             <button id="payment-button" type="submit"
                                                 class="btn btn-lg btn-info btn-block">
@@ -403,12 +495,22 @@
                                             </button>
                                         </div>
                                     </form>
+<<<<<<< HEAD
                                     {{!-- {{/each}} --}}
                                 </div>
                             </div>
                         {{!-- </div>
                     </div>
                 </div> --}}
+=======
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
@@ -435,6 +537,7 @@
     <!-- Vendor JS       -->
     <script src="template/vendor/slick/slick.min.js">
     </script>
+<<<<<<< HEAD
     <!-- <script src="views/vendor/wow/wow.min.js"></script> -->
     <script src="template/vendor/animsition/animsition.min.js"></script>
     <script src="template/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
@@ -446,6 +549,19 @@
     <script src="template/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
     <!-- <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js"> -->
+=======
+    <!-- <script src="views/template/vendor/wow/wow.min.js"></script> -->
+    <script src="template/vendor/animsition/animsition.min.js"></script>
+    <script src="template/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <!-- <script src="template/vendor/counter-up/jquery.waypoints.min.js"></script> -->
+    <!-- <script src="template/vendor/counter-up/jquery.counterup.min.js"> -->
+    </script>
+    <!-- <script src="template/vendor/circle-progress/circle-progress.min.js"></script> -->
+    <script src="template/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <!-- <script src="template/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="template/vendor/select2/select2.min.js"> -->
+>>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
     </script>
 
     <!-- Main JS-->

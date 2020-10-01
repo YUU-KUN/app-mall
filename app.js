@@ -1,4 +1,3 @@
-
 require ('./models/dbConnect')
 
 const express = require('express')
@@ -11,16 +10,15 @@ var session = require('express-session')
 const userauth = require('./controllers/userauth');
 const auth = require('./utils/authlogin')
 
-const exampleRouter = require('./controllers/example.Controller');
-// const exampleUtils = require('./utils/example.Utils')
-
+const exampleRouter = require('./controllers/example.Controller')
 const routerProduk = require('./controllers/routerProduk');
 const Distributor = require('./controllers/distributorController');
 const Kurir = require('./controllers/kurirController');
 const kategori = require('./controllers/kategoriController');
+const pembelian = require('./routes/pembelian.Router');
+const penjualan = require('./routes/penjualan.Router');
 const request = require("supertest");
 const admin = require('./controllers/adminController')
-
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -54,7 +52,8 @@ app.use('/kurir', Kurir);
 app.use('/kategori',kategori)
 app.use('/produk', routerProduk);
 
-app.use('/kategori', kategori);
+app.use('/pembelian', pembelian);
+app.use('/penjualan', penjualan);
 
 app.use('/produk', routerProduk);
 

@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Distributor = require('../models/distributorModel');
 
-
 router.get("/", async (req, res) => {
     try {
         const distributor = await Distributor.find();
@@ -47,31 +46,16 @@ router.post("/tambah", async (req, res) => {
     }
 });
 
-router.get('/edit', async (req, res) => {
-    try {
-        const distributor = await Distributor.findById(req.params.id);
-        res.render('updateDistributor', {
-            data: distributor
-        })
-        res.render('distributor')
-        // res.json(distributor);
-        console.log(distributor);
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
-})
-
-router.post("/edit/:id", getDistributor, async (req, res) => {
+router.post("/edit/:id", getDistributor, async(req, res) => {
     try {
         const editDistributor = await res.distributor.set(req.body);
-        // res.json({ message: "Berhasil Mengubah Data Distributor", editDistributor});
-        res.redirect('/distributor', 200)
+        res.json({ message: "Berhasil Mengubah Data Distributor", data : editDistributor});
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
 });
 
-router.get("/hapus/:id", getDistributor, async (req, res) => {
+router.get("/hapus/:id", getDistributor, async(req, res) => {
     try {
         await res.distributor.deleteOne();
         // res.json({ message: "Berhasil Menghapus Data Distributor" });
