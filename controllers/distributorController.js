@@ -3,20 +3,35 @@ const router = express.Router();
 const Distributor = require('../models/distributorModel');
 
 
-router.get("/", async(req, res) => {
+router.get("/", async (req, res) => {
     try {
         const distributor = await Distributor.find();
-        res.render('distributor', {
-            data: distributor
-        })
-        // res.json(distributor);
-        console.log(distributor);
+        if (req.session.nama && req.session.email) {
+
+            res.render('distributor', {
+                nama: req.session.nama,
+                // nama: req.session.nama,
+                email: req.session.email,
+                data: distributor
+            })
+            console.log(distributor);
+            // res.json(distributor);
+        } else {
+            // res.send('Mohon login terlebih dahulu')
+            res.render('distributor', {
+                nama: "User",
+                // nama: req.session.nama,
+                email: "User@email.com",
+                data: distributor
+            })
+            // res.json(distributor);
+        }
     } catch (err) {
-        res.status(500).json({message: err.message});
+        res.status(500).json({ message: err.message });
     }
 });
 
-router.post("/tambah", async(req, res) => {
+router.post("/tambah", async (req, res) => {
     const distributor = new Distributor({
         nama: req.body.nama,
         alamat: req.body.alamat,
@@ -28,21 +43,35 @@ router.post("/tambah", async(req, res) => {
         // res.status(201).json({ message: "Berhasil Tambah Data Distributor", newDistributor });
         res.redirect('/distributor')
     } catch (err) {
-        res.status(400).json({message: err.message});
+        res.status(400).json({ message: err.message });
     }
 });
 
-router.post("/edit/:id", getDistributor, async(req, res) => {
+router.get('/edit', async (req, res) => {
+    try {
+        const distributor = await Distributor.findById(req.params.id);
+        res.render('updateDistributor', {
+            data: distributor
+        })
+        res.render('distributor')
+        // res.json(distributor);
+        console.log(distributor);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+})
+
+router.post("/edit/:id", getDistributor, async (req, res) => {
     try {
         const editDistributor = await res.distributor.set(req.body);
-        res.json({ message: "Berhasil Mengubah Data Distributor", editDistributor});
-        // res.redirect('/distributor')
+        // res.json({ message: "Berhasil Mengubah Data Distributor", editDistributor});
+        res.redirect('/distributor', 200)
     } catch (err) {
-        res.status(400).json({message: err.message});
+        res.status(400).json({ message: err.message });
     }
 });
 
-router.get("/hapus/:id", getDistributor, async(req, res) => {
+router.get("/hapus/:id", getDistributor, async (req, res) => {
     try {
         await res.distributor.deleteOne();
         // res.json({ message: "Berhasil Menghapus Data Distributor" });
@@ -57,9 +86,9 @@ async function getDistributor(req, res, next) {
     let distributor;
     try {
         distributor = await Distributor.findById(req.params.id);
-        if(distributor == null) {
+        if (distributor == null) {
             return res.status(404).json({ message: "Data tidak ditemukan" });
-        }  
+        }
     } catch (err) {
         return res.status(500).json({ message: err.message });
     }
