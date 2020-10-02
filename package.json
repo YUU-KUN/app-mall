@@ -1,0 +1,39 @@
+{
+  "name": "app-mall",
+  "version": "1.0.0",
+  "description": "Muhammad Khafid Ali Hamka",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muhammadkhafid/app-mall.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Muhammadkhafid/app-mall/issues"
+  },
+  "homepage": "https://github.com/Muhammadkhafid/app-mall#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-redis": "^5.0.0",
+    "cookie-session": "^1.4.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "hbs": "^4.1.1",
+    "mongodb": "^3.6.2",
+    "head": "1.0.0",
+    "mongoose": "^5.10.7",
+    "path": "^0.12.7",
+    "pug": "^3.0.0",
+    "redis": "^3.0.2",
+    "supertest": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
