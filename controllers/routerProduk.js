@@ -52,16 +52,6 @@ router.get("/edit/:id", async(req, res) => {
     }
 })
 
-router.post("/update/:id", async(req, res) => {
-    try {
-        const editProduk = await Produk.findByIdAndUpdate({_id: req.params.id, active:true},req.body)
-        // res.json({ message: "Berhasil Mengubah Data Distributor", data: editProduk});
-        res.redirect('/produk')
-    } catch (err) {
-        res.status(400).json({ message: 'error', error: err.message });
-    }
-})
-
 router.post("/update/:id", async (req, res) => {
     try {
         const editProduk = await Produk.findByIdAndUpdate({ _id: req.params.id, active: true }, req.body)

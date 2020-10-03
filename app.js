@@ -30,10 +30,7 @@ app.use((req, res, next) => {
 
 
 app.set('view engine', 'hbs');
-// app.set('views', path.join(__dirname, 'views/template'))
-// app.use("/static", express.static('./static/'));
-// app.use(express.static('views/'));
-app.use(express.static('views/'));
+app.use(express.static(__dirname + '/public')); 
 
 app.use(session({
     secret: 'secrett',
@@ -44,7 +41,7 @@ app.use(session({
 app.use('/', userauth);
 app.use('/admin',auth.is_admin,admin);
 
-app.use('/', exampleRouter);
+app.use('/dashboardAdmin', exampleRouter);
 // app.use('/admin',exampleUtils,exampleRouter);
 
 app.use('/distributor', Distributor);

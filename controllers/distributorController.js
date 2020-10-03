@@ -46,14 +46,33 @@ router.post("/tambah", async (req, res) => {
     }
 });
 
-router.post("/edit/:id", getDistributor, async(req, res) => {
+router.get("/edit/:id", async(req, res) => {
     try {
-        const editDistributor = await res.distributor.set(req.body);
-        res.json({ message: "Berhasil Mengubah Data Distributor", data : editDistributor});
+        const distributor = await Distributor.find({_id: req.params.id})
+        res.render("editDistributor", { data: distributor });
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.status(400).json({message: 'error', error: err.message});
     }
-});
+})
+
+router.post("/edit/:id", async(req, res) => {
+    try {
+        const editDistributor = await Distributor.findByIdAndUpdate({_id: req.params.id},req.body)
+        // res.json({ message: "Berhasil Mengubah Data Distributor", data: editProduk});
+        res.redirect('/distributor')
+    } catch (err) {
+        res.status(400).json({ message: 'error', error: err.message });
+    }
+})
+
+// router.post("/edit/:id", getDistributor, async(req, res) => {
+//     try {
+//         const editDistributor = await res.distributor.set(req.body);
+//         res.json({ message: "Berhasil Mengubah Data Distributor", data : editDistributor});
+//     } catch (err) {
+//         res.status(400).json({ message: err.message });
+//     }
+// });
 
 router.get("/hapus/:id", getDistributor, async(req, res) => {
     try {

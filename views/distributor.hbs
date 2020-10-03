@@ -142,20 +142,12 @@
                         </li>
 
                         <li class="active">
-<<<<<<< HEAD
-                            <a href="table">
-=======
                             <a href="/distributor">
->>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                 <i class="fas fa-table"></i>Distributor</a>
                         </li>
 
                         <li>
-<<<<<<< HEAD
-                            <a href="produk">
-=======
                             <a href="/produk">
->>>>>>> efde5e4fe9f0bc40d0e635b77fb637b2994ee6ab
                                 <i class="fas fa-table"></i>Produk</a>
                         </li>
 
@@ -384,8 +376,8 @@
                                         <h3 class="text-center title-2">Form Edit Distributor</h3>
                                     </div>
                                     <hr>
-                                    <form action="/distributor/edit/{{data._id}}" method="post" novalidate="novalidate">
                                     {{#each data}}
+                                    <form action="/distributor/edit/{{this._id}}" method="post" novalidate="novalidate">
                                         <div class="form-group">
                                             <label for="cc-payment" class="control-label mb-1">Nama</label>
                                             <input id="cc-pament" name="nama" type="text" class="form-control"
@@ -437,8 +429,8 @@
                                                 {{!-- <span id="payment-button-sending" style="display:none;">Sending…</span> --}}
                                             </button>
                                         </div>
-                                        {{/each}}
                                     </form>
+                                        {{/each}}
                                 </div>
                             </div>
                         </div>
@@ -480,7 +472,7 @@
                                                 <td>{{this.pemilik}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <a href="/distributor/edit">
+                                                        <a href="/distributor/edit/{{this._id}}">
                                                         <button class="item"  data-placement="top"
                                                             title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
