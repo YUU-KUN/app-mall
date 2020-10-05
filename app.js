@@ -26,6 +26,7 @@ const admin = require('./controllers/adminController')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     next();
@@ -34,7 +35,7 @@ app.use((req, res, next) => {
 
 app.set('view engine', 'hbs');
 // app.set('views', path.join(__dirname, 'views/template'))
-app.use(express.static('views'));
+app.use(express.static(__dirname+'/public'));
 
 app.use(session({
     secret: 'secrett',

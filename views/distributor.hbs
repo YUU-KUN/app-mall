@@ -7,28 +7,28 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Tables</title>
+    <title>Distributor List</title>
 
     <!-- Fontfaces CSS-->
-    <link href="template/css/font-face.css" rel="stylesheet" media="all">
-    <link href="template/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="template/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="template/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="/css/font-face.css" rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
-    <link href="template/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
-    <link href="template/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="template/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
     <!-- <link href="template/vendor/wow/animate.css" rel="stylesheet" media="all"> -->
-    <link href="template/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="template/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/slick/slick.css" rel="stylesheet" media="all">
     <!-- <link href="template/vendor/select2/select2.min.css" rel="stylesheet" media="all"> -->
-    <link href="template/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link href="/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="template/css/theme.css" rel="stylesheet" media="all">
+    <link href="/css/theme.css" rel="stylesheet" media="all">
 </head>
 
 <body class="animsition">
@@ -39,7 +39,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="template/images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="/images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -130,25 +130,26 @@
             <div class="logo">
                 <a href="#">
                     <!-- <img src="./images/icon/logo.png" alt="Cool Admin" /> -->
-                    <img src="template/images/icon/logo.png" alt="Cool Admin" />
+                    <img src="/images/icon/logo.png" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a class="js-arrow" href="/home">
+                            <a class="js-arrow" href="/dashboard">
+                            {{!-- <a class="js-arrow" href="/home"> --}}
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
 
                         <li>
                             <a href="/distributor">
-                                <i class="fas fa-table"></i>Distributor</a>
+                                <i class="fas fa-truck"></i>Distributor</a>
                         </li>
 
                         <li>
                             <a href="/produk">
-                                <i class="fas fa-table"></i>Produk</a>
+                                <i class="fas fa-box"></i>Produk</a>
                         </li>
 
                         <li>
@@ -160,6 +161,12 @@
                             <a href="/kurir">
                                 <i class="fas fa-motorcycle"></i>Kurir</a>
                         </li>
+
+                         <li>
+                            <a href="/agen">
+                                <i class="fas fa-users"></i>Agen</a>
+                        </li>
+                        
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-desktop"></i>UI Elements</a>
@@ -225,7 +232,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="template/images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">john doe</a>
@@ -234,7 +241,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="template/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -498,27 +505,26 @@
 
 
     <!-- Jquery JS-->
-    <script src="template/vendor/jquery-3.2.1.min.js"></script>
+    <script src="/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
-    <script src="template/vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="template/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <!-- Vendor JS       -->
-    <script src="template/vendor/slick/slick.min.js">
+    <script src="/vendor/slick/slick.min.js">
     </script>
     <!-- <script src="views/template/vendor/wow/wow.min.js"></script> -->
-    <script src="template/vendor/animsition/animsition.min.js"></script>
-    <script src="template/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    <script src="/vendor/animsition/animsition.min.js"></script>
+    <script src="/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
     </script>
     <!-- <script src="template/vendor/counter-up/jquery.waypoints.min.js"></script> -->
     <!-- <script src="template/vendor/counter-up/jquery.counterup.min.js"> -->
     </script>
     <!-- <script src="template/vendor/circle-progress/circle-progress.min.js"></script> -->
-    <script src="template/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
     <!-- <script src="template/vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="template/vendor/select2/select2.min.js"> -->
     </script>
 
     <!-- Main JS-->
-    <script src="template/js/main.js"></script>
-
+    <script src="/js/main.js"></script>
 </body>

@@ -317,113 +317,51 @@
                                         <h3 class="text-center title-2">Form Edit Produk</h3>
                                     </div>
                                     <hr>
-                                    {{#each data}}
-                                    <form action="/produk/update/{{this.id}}" method="post" novalidate="novalidate">
-                                    
-                                        <div class="form-group">
-                                            <label for="cc-payment" class="control-label mb-1">Nama Produk</label>
-                                            <input id="cc-pament" name="nama" type="text" class="form-control"
-                                                aria-required="true" aria-invalid="false" value="{{this.nama}}"
-                                                placeholder="Nama Produk">
-                                        </div>
-                                        <div class="form-group has-success">
-                                            <label for="cc-name" class="control-label mb-1">Deskripsi</label>
-                                            <input id="cc-name" name="deskripsi" type="text"
-                                                class="form-control cc-name valid" value="{{this.deskripsi}}" data-val="true"
-                                                data-val-required="Mohon isi Deskripsi Produk" autocomplete="cc-name"
-                                                aria-required="true" aria-invalid="false"
-                                                aria-describedby="cc-name-error" placeholder="Deskripsi Produk">
-                                            <span class="help-block field-validation-valid" data-valmsg-for="cc-name"
-                                                data-valmsg-replace="true"></span>
-                                        </div>
-                                        <hr>
+                                    <form action="/agen/update/{{data._id}}" method="post" novalidate="novalidate">
+                        {{!-- {{#each data}} --}}
+                            <div class="form-group">
+                                <label for="cc-payment" class="control-label mb-1">Nama</label>
+                                <input id="cc-pament" name="nama" type="text" class="form-control" value="{{data.nama}}" aria-required="true"
+                                    aria-invalid="false" placeholder="Nama Distributor">
+                            </div>
+                            <div class="form-group has-success">
+                                <label for="cc-name" class="control-label mb-1">Alamat</label>
+                                <input id="cc-name" name="alamat" type="text" class="form-control cc-name valid" value="{{data.alamat}}"
+                                    data-val="true" data-val-required="Mohon isi Alamat Distributor" autocomplete="cc-name" aria-required="true"
+                                    aria-invalid="false" aria-describedby="cc-name-error" placeholder="Alamat Distributor">
+                                <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                            </div>
 
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Kategori</label>
-                                                    <select id="cc-exp" name="kategori" type="text"
-                                                        class="form-control cc-exp" value="{{this.kategori}}" data-val="true"
-                                                        {{!-- data-val-required="Mohon isi Kategori Produk" --}}
-                                                        {{!-- class="form-control cc-exp" value="{{data.kategori}}" data-val="true"
-                                                        data-val-required="Mohon isi Kategori Produk" --}}
-                                                        {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
-                                                        placeholder="Kategori Produk" autocomplete="cc-exp">
-                                                        <option>Pulsa</option>
-                                                        <option>Paket Data</option>
-                                                    </select>
-                                                    <span class="help-block" data-valmsg-for="cc-exp"
-                                                        data-valmsg-replace="true"></span>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <label for="x_card_code" class="control-label mb-1">Sub Kategori</label>
-                                                <div class="input-group">
-                                                    <select id="cc-exp" name="subKategori" type="text"
-                                                        class="form-control cc-exp" value="{{this.subKategori}}" data-val="true"
-                                                        {{!-- data-val-required="Mohon isi Kategori Produk" --}}
-                                                        {{!-- class="form-control cc-exp" value="{{data.subKategori}}" data-val="true"
-                                                        data-val-required="Mohon isi Kategori Produk" --}}
-                                                        {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
-                                                        placeholder="Sub Kategori Produk" autocomplete="cc-exp">
-                                                        <option>Tsel</option>
-                                                        <option>Im3</option>
-                                                        <option>By. U</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Harga Jual</label>
-                                                    <input id="cc-exp" name="hargaJual" type="number"
-                                                        class="form-control cc-exp" value="{{this.hargaJual}}" data-val="true"
-                                                        data-val-required="Mohon isi Harga Jual"
-                                                        data-val-cc-exp="Mohon isi dengan Angka"
-                                                        placeholder="Harga Jual Produk" autocomplete="cc-exp">
-                                                    <span class="help-block" data-valmsg-for="cc-exp"
-                                                        data-valmsg-replace="true"></span>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <label for="x_card_code" class="control-label mb-1">Harga Beli</label>
-                                                <div class="input-group">
-                                                    <input id="x_card_code" name="hargaBeli" type="number"
-                                                        class="form-control cc-cvc" value="{{this.hargaBeli}}" data-val="true"
-                                                        data-val-required="Mohon isi Harga Beli"
-                                                        data-val-cc-cvc="Mohon isi dengan Angka"
-                                                        autocomplete="off" placeholder="Harga Beli Produk">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label for="cc-exp" class="control-label mb-1">Nomor HP</label>
+                                        <input id="cc-exp" name="noHp" type="number" class="form-control cc-exp" value="{{data.noHp}}"
+                                            data-val="true" data-val-required="Mohon isi Nomor Handphone Distributor"
+                                            data-val-cc-exp="Mohon isi dengan Angka" placeholder="Nomor Handphone Distributor"
+                                            autocomplete="cc-exp">
+                                        <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <label for="x_card_code" class="control-label mb-1">Pemilik</label>
+                                    <div class="input-group">
+                                        <input id="x_card_code" name="pemilik" type="text" class="form-control cc-cvc" value="{{data.pemilik}}"
+                                            data-val="true" data-val-required="Mohon isi Nama Pemilik" data-val-cc-cvc="Mohon isi dengan Huruf"
+                                            autocomplete="off" placeholder="Nama Pemilik">
 
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Stok</label>
-                                                    <input id="cc-exp" name="stok" type="number"
-                                                        class="form-control cc-exp" value="{{this.stok}}" data-val="true"
-                                                        data-val-required="Mohon isi Stok Produk"
-                                                        data-val-cc-exp="Mohon isi dengan Angka"
-                                                        placeholder="Stok Produk" autocomplete="cc-exp">
-                                                    <span class="help-block" data-valmsg-for="cc-exp"
-                                                        data-valmsg-replace="true"></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div>
-                                            <button id="payment-button" type="submit"
-                                                class="btn btn-lg btn-info btn-block">
-                                                <i class="fa fa-paper-plane fa-lg"></i>&nbsp;
-                                                <span>Simpan</span>
-                                                {{!-- <span id="payment-button-sending" style="display:none;">Sending…</span> --}}
-                                            </button>
-                                        </div>
-                                    </form>
-                                    {{/each}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                    <i class="fa fa-paper-plane fa-lg"></i>&nbsp;
+                                    <span>Simpan</span>
+                                    {{!-- <span id="payment-button-sending" style="display:none;">Sending…</span> --}}
+                                </button>
+                            </div>
+                            {{!-- {{/each}} --}}
+                        </form>
                                 </div>
                             </div>
                         </div>
