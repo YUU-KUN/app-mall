@@ -7,7 +7,7 @@ const kurir = new Schema({
         require: true
     },
     noHp: {
-        type: String,
+        type: Number,
         require: true
     },
     alamat: {
