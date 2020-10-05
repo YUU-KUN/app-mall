@@ -26,8 +26,10 @@
     "express-session": "^1.17.1",
     "fs": "0.0.1-security",
     "hbs": "^4.1.1",
-    "head": "1.0.0",
+
     "mongodb": "^3.6.2",
+    "head": "1.0.0",
+
     "mongoose": "^5.10.7",
     "path": "^0.12.7",
     "pug": "^3.0.0",

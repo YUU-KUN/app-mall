@@ -14,7 +14,8 @@ router.post('/login',async(req,res)=>{
             req.session.email = user.email;
             req.session.nama = user.nama;
             req.session.password = user.password;
-            req.session.level = user.level;
+            // req.session.level = user.level;
+            res.redirect('/dashboard')
         if (user.level =='admin') {
             req.session.admin = true
             res.redirect('/admin')
@@ -45,6 +46,12 @@ router.post('/register',async (req,res)=>{
     }catch(err){
         res.status(400).json({message: 'error', error: err.message})
     }
+})
+
+router.get('/dashboard', (req, res) => {
+    res.render('dashboardUser', {
+       message: req.session.nama  
+    })
 })
 
 router.get('/logout', (req, res) => {
