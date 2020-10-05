@@ -10,10 +10,13 @@ var session = require('express-session')
 const userauth = require('./controllers/userauth');
 const auth = require('./utils/authlogin')
 
-const exampleRouter = require('./controllers/example.Controller')
+const exampleRouter = require('./controllers/example.Controller');
+//const exampleUtils = require('./utils/example.Utils')
+
 const routerProduk = require('./controllers/routerProduk');
 const Distributor = require('./controllers/distributorController');
 const Kurir = require('./controllers/kurirController');
+const Agen = require('./controllers/agenController');
 const kategori = require('./controllers/kategoriController');
 const pembelian = require('./routes/pembelian.Router');
 const penjualan = require('./routes/penjualan.Router');
@@ -30,7 +33,7 @@ app.use((req, res, next) => {
 
 
 app.set('view engine', 'hbs');
-app.use(express.static(__dirname + '/public')); 
+app.use(express.static(__dirname + '/public'));
 
 app.use(session({
     secret: 'secrett',
@@ -41,18 +44,18 @@ app.use(session({
 app.use('/', userauth);
 app.use('/admin',auth.is_admin,admin);
 
-app.use('/dashboardAdmin', exampleRouter);
+// app.use('/example', exampleRouter);
 // app.use('/admin',exampleUtils,exampleRouter);
 
 app.use('/distributor', Distributor);
 app.use('/kurir', Kurir);
+app.use('/agen', Agen);
 app.use('/kategori',kategori)
 app.use('/produk', routerProduk);
 
+
 app.use('/pembelian', pembelian);
 app.use('/penjualan', penjualan);
-
-app.use('/produk', routerProduk);
 
 app.listen(process.env.PORT || 3000,() => {
     console.log(`App Started on PORT ${process.env.PORT || 3000}`);

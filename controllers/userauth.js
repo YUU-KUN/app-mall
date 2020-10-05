@@ -40,7 +40,8 @@ router.post('/register',async (req,res)=>{
 
     try{
         const tambahUser = await user.save()
-        res.status(200).json({message: 'Berhasil',data: tambahUser})
+        // res.status(200).json({message: 'Berhasil',data: tambahUser})
+        res.redirect('/login')
     }catch(err){
         res.status(400).json({message: 'error', error: err.message})
     }

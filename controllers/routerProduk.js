@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
         const produk = await Produk.find({ active: true })
         // res.status(200).json({message: 'Sukses', data:produk})
         res.render('produk', {
-            data: produk
+            data:produk,
         })
     } catch (err) {
         res.status(400).json({ message: 'error', error: err.message });

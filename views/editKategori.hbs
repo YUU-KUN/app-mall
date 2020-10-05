@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -9,7 +7,7 @@
     <meta name="keywords" content="au theme ">
 
     <!-- Title Page-->
-    <title>Edit Produk</title> 
+    <title>Tables</title>
 
     <!-- Fontfaces CSS-->
     <link href="/css/font-face.css" rel="stylesheet" media="all">
@@ -139,11 +137,11 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a class="js-arrow" href="/home">
+                            <a class="js-arrow" href="index.html">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
 
-                        <li>
+                        <li class="active">
                             <a href="/distributor">
                                 <i class="fas fa-table"></i>Distributor</a>
                         </li>
@@ -288,12 +286,12 @@
             <div class="main-content">
                 <!-- Modal -->
 
-                {{!-- <div class="modal fade" id="modalEditProduk" tabindex="-1" role="dialog"
-                    aria-labelledby="modalAddProdukTitle" aria-hidden="true"> --}}
+                <div class="modal fade" id="modalEditKategori" tabindex="-1" role="dialog"
+                    aria-labelledby="modalAddKategoriTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">produk table </h5>
+                                <h5 class="modal-title" id="exampleModalLongTitle">Kategori Table </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -301,112 +299,31 @@
                             <div class="modal-body">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <h3 class="text-center title-2">Form Edit Produk</h3>
+                                        <h3 class="text-center title-2">Form Edit kategori</h3>
                                     </div>
                                     <hr>
-                                    {{#each data}}
-                                    <form action="/produk/update/{{this.id}}" method="post" novalidate="novalidate">
+                                    
+                                    <form action="/kategori/update/{{this.id}}" method="post" novalidate="novalidate">
                                     
                                         <div class="form-group">
-                                            <label for="cc-payment" class="control-label mb-1">Nama Produk</label>
+                                            <label for="cc-payment" class="control-label mb-1">Nama Kategori</label>
                                             <input id="cc-pament" name="nama" type="text" class="form-control"
                                                 aria-required="true" aria-invalid="false" value="{{this.nama}}"
-                                                placeholder="Nama Produk">
+                                                placeholder="Nama Kategori">
                                         </div>
+                                        <hr>
                                         <div class="form-group has-success">
-                                            <label for="cc-name" class="control-label mb-1">Deskripsi</label>
-                                            <input id="cc-name" name="deskripsi" type="text"
-                                                class="form-control cc-name valid" value="{{this.deskripsi}}" data-val="true"
-                                                data-val-required="Mohon isi Deskripsi Produk" autocomplete="cc-name"
+                                            <label for="cc-name" class="control-label mb-1">Sub Kategori</label>
+                                            <input id="cc-name" name="sub" type="text"
+                                                class="form-control cc-name valid" value="{{this.sub}}" data-val="true"
+                                                data-val-required="Mohon isi Sub Kategori" autocomplete="cc-name"
                                                 aria-required="true" aria-invalid="false"
-                                                aria-describedby="cc-name-error" placeholder="Deskripsi Produk">
+                                                aria-describedby="cc-name-error" placeholder="Sub Kategori">
                                             <span class="help-block field-validation-valid" data-valmsg-for="cc-name"
                                                 data-valmsg-replace="true"></span>
                                         </div>
                                         <hr>
 
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Kategori</label>
-                                                    <select id="cc-exp" name="kategori" type="text"
-                                                        class="form-control cc-exp" value="{{data.kategori}}" data-val="true"
-                                                        data-val-required="Mohon isi Kategori Produk"
-                                                        {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
-                                                        placeholder="Kategori Produk" autocomplete="cc-exp">
-                                                        <option>Pulsa</option>
-                                                        <option>Paket Data</option>
-                                                    </select>
-                                                    <span class="help-block" data-valmsg-for="cc-exp"
-                                                        data-valmsg-replace="true"></span>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <label for="x_card_code" class="control-label mb-1">Sub Kategori</label>
-                                                <div class="input-group">
-                                                    <select id="cc-exp" name="subKategori" type="text"
-                                                        class="form-control cc-exp" value="{{data.subKategori}}" data-val="true"
-                                                        data-val-required="Mohon isi Kategori Produk"
-                                                        {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
-                                                        placeholder="Sub Kategori Produk" autocomplete="cc-exp">
-                                                        <option>Tsel</option>
-                                                        <option>Im3</option>
-                                                        <option>By. U</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Harga Jual</label>
-                                                    <input id="cc-exp" name="hargaJual" type="number"
-                                                        class="form-control cc-exp" value="{{this.hargaJual}}" data-val="true"
-                                                        data-val-required="Mohon isi Harga Jual"
-                                                        data-val-cc-exp="Mohon isi dengan Angka"
-                                                        placeholder="Harga Jual Produk" autocomplete="cc-exp">
-                                                    <span class="help-block" data-valmsg-for="cc-exp"
-                                                        data-valmsg-replace="true"></span>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <label for="x_card_code" class="control-label mb-1">Harga Beli</label>
-                                                <div class="input-group">
-                                                    <input id="x_card_code" name="hargaBeli" type="number"
-                                                        class="form-control cc-cvc" value="{{this.hargaBeli}}" data-val="true"
-                                                        data-val-required="Mohon isi Harga Beli"
-                                                        data-val-cc-cvc="Mohon isi dengan Angka"
-                                                        autocomplete="off" placeholder="Harga Beli Produk">
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Stok</label>
-                                                    <input id="cc-exp" name="stok" type="number"
-                                                        class="form-control cc-exp" value="{{this.stok}}" data-val="true"
-                                                        data-val-required="Mohon isi Stok Produk"
-                                                        data-val-cc-exp="Mohon isi dengan Angka"
-                                                        placeholder="Stok Produk" autocomplete="cc-exp">
-                                                    <span class="help-block" data-valmsg-for="cc-exp"
-                                                        data-valmsg-replace="true"></span>
-                                                </div>
-                                            </div>
-                                            {{!-- <div class="col-6">
-                                                <label for="x_card_code" class="control-label mb-1">Laba</label>
-                                                <div class="input-group">
-                                                    <input id="x_card_code" name="laba" type="text"
-                                                        class="form-control cc-cvc" value="" data-val="true"
-                                                        data-val-required="Mohon isi Laba"
-                                                        data-val-cc-cvc="Mohon isi dengan Angka"
-                                                        autocomplete="off" placeholder="Laba Produk">
-                                                </div>
-                                            </div> --}}
-                                        </div>
-                                        
                                         <div>
                                             <button id="payment-button" type="submit"
                                                 class="btn btn-lg btn-info btn-block">
@@ -416,12 +333,12 @@
                                             </button>
                                         </div>
                                     </form>
-                                    {{/each}}
+                                   
                                 </div>
                             </div>
                         </div>
                     </div>
-                {{!-- </div> --}}
+                </div>
 
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
@@ -466,5 +383,3 @@
     <script src="/js/main.js"></script>
 
 </body>
-
-</html>
