@@ -33,6 +33,7 @@ app.use((req, res, next) => {
 
 
 app.set('view engine', 'hbs');
+
 app.use(express.static(__dirname + '/public'));
 
 app.use(session({
@@ -44,7 +45,7 @@ app.use(session({
 app.use('/', userauth);
 app.use('/admin',auth.is_admin,admin);
 
-// app.use('/example', exampleRouter);
+app.use('/example', exampleRouter);
 // app.use('/admin',exampleUtils,exampleRouter);
 
 app.use('/distributor', Distributor);

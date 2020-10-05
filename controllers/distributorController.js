@@ -8,6 +8,7 @@ router.get("/", async (req, res) => {
         if (req.session.nama && req.session.email) {
 
             res.render('distributor', {
+                title: 'Distributor',
                 nama: req.session.nama,
                 // nama: req.session.nama,
                 email: req.session.email,
@@ -49,7 +50,10 @@ router.post("/tambah", async (req, res) => {
 router.get("/edit/:id", async(req, res) => {
     try {
         const distributor = await Distributor.find({_id: req.params.id})
-        res.render("editDistributor", { data: distributor });
+        res.render("editDistributor", { 
+            data: distributor,
+            title: 'Edit Distributor',
+         });
     } catch (err) {
         res.status(400).json({message: 'error', error: err.message});
     }

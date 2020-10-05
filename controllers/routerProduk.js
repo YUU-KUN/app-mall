@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
         // res.status(200).json({message: 'Sukses', data:produk})
         res.render('produk', {
             data:produk,
+            title: 'Produk'
         })
     } catch (err) {
         res.status(400).json({ message: 'error', error: err.message });
@@ -46,7 +47,10 @@ router.post('/add', async (req, res) => {
 router.get("/edit/:id", async(req, res) => {
     try {
         const produk = await Produk.find({_id: req.params.id, active:true})
-        res.render("editProduk", { data: produk });
+        res.render("editProduk", { 
+            data: produk,
+            title: 'Edit Produk'
+         });
     } catch (err) {
         res.status(400).json({message: 'error', error: err.message});
     }
