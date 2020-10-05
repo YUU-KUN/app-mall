@@ -7,7 +7,8 @@ router.get("/", async(req, res) => {
         const kurir = await Kurir.find();
 
         res.render('kurir', {
-            data:kurir
+            data:kurir,
+            title: 'Kurir'
         })
     } catch (err) {
         res.status(500).json({message: err.message});
@@ -35,7 +36,8 @@ router.get("/edit/:id", getKurir, async(req, res) => {
         const editKurir = await res.kurir.set(req.body);
         // res.json({ message: "Berhasil Mengubah Data Distributor", data : editKurir});
         res.render('editKurir', {
-            data: editKurir
+            data: editKurir,
+            title: 'Edit Kurir'
         });
     } catch (err) {
         res.status(400).json({message: err.message});

@@ -18,6 +18,7 @@ router.get('/', async(req, res) => {
     const countDistributor = await Distributor.countDocuments({})
 
     res.render('dashboardAdmin', {
+        title: 'Dashboard Admin',
         totalProduk:countProduk,
         totalUser:countUser,
         totalKurir: countKurir,

@@ -41,7 +41,10 @@ router.post('/add', async (req, res) => {
 router.get("/edit/:id", async (req, res) => {
     try {
         const kategori = await Kategori.find({ _id: req.params.id, active: true })
-        res.render("editKategori", { data: kategori });
+        res.render("editKategori", {
+            data: kategori,
+            title: 'Edit Kategori'
+        });
     } catch (err) {
         res.status(400).json({ message: 'error', error: err.message });
     }
