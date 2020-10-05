@@ -6,7 +6,6 @@ router.get("/", async (req, res) => {
     try {
         const distributor = await Distributor.find();
         if (req.session.nama && req.session.email) {
-
             res.render('distributor', {
                 title: 'Distributor',
                 nama: req.session.nama,
@@ -19,6 +18,7 @@ router.get("/", async (req, res) => {
         } else {
             // res.send('Mohon login terlebih dahulu')
             res.render('distributor', {
+                title: 'Distributor',
                 nama: "User",
                 // nama: req.session.nama,
                 email: "User@email.com",

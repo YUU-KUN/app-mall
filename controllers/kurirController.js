@@ -53,11 +53,19 @@ router.post("/update/:id", async(req, res) => {
     }
 });
 
-router.get("/hapus/:id", getKurir, async(req, res) => {
+router.put("/edit/:id", getKurir, async(req, res) => {
+    try {
+        const editKurir = await res.kurir.set(req.body);
+        res.json({ message: "Berhasil Mengubah Data Distributor", data : editKurir});
+    } catch (err) {
+        res.status(400).json({message: err.message});
+    }
+});
+
+router.delete("/hapus/:id", getKurir, async(req, res) => {
     try {
         await res.kurir.deleteOne();
-        // res.json({ message: "Berhasil Menghapus Data Distributor" });
-        res.redirect('/kurir')
+        res.json({ message: "Berhasil Menghapus Data Distributor" });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }

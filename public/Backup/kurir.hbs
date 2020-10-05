@@ -2,12 +2,9 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="au theme ">
-    <meta name="author" content="Hau Nguyen">
-    <meta name="keywords" content="au theme ">
 
     <!-- Title Page-->
-    <title>{{title}}</title>
+    <title>Courier List</title>
 
     <!-- Fontfaces CSS-->
     <link href="/css/font-face.css" rel="stylesheet" media="all">
@@ -52,12 +49,12 @@
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
+
+
+
                         <li>
                             <a href="table.html">
                                 <i class="fas fa-table"></i>Distributor</a>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Produk</a>
                         </li>
 
                         <li>
@@ -138,7 +135,6 @@
                     <ul class="list-unstyled navbar__list">
                         <li>
                             <a class="js-arrow" href="/dashboard">
-                                {{!-- <a class="js-arrow" href="/home"> --}}
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
 
@@ -147,7 +143,7 @@
                                 <i class="fas fa-truck"></i>Distributor</a>
                         </li>
 
-                        <li class="active">
+                        <li>
                             <a href="/produk">
                                 <i class="fas fa-box"></i>Produk</a>
                         </li>
@@ -157,7 +153,7 @@
                                 <i class="fas fa-tasks"></i>Kategori</a>
                         </li>
 
-                        <li>
+                        <li class="active">
                             <a href="/kurir">
                                 <i class="fas fa-motorcycle"></i>Kurir</a>
                         </li>
@@ -216,7 +212,7 @@
         <div class="page-container">
             <!-- HEADER DESKTOP-->
             <header class="header-desktop">
-                <div class="section__content section__content--p30">
+                <div class="section_content section_content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
@@ -281,13 +277,13 @@
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
-                <!-- Modal -->
-                <div class="modal fade" id="modalAddProduk" tabindex="-1" role="dialog"
-                    aria-labelledby="modalAddProdukTitle" aria-hidden="true">
+                <!-- Modal Tambah Distributor-->
+                <div class="modal fade" id="modalAddKurir" tabindex="-1" role="dialog"
+                    aria-labelledby="modalAddKurirTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">produk table </h5>
+                                <h5 class="modal-title" id="exampleModalLongTitle">Tambah Kurir </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -295,98 +291,51 @@
                             <div class="modal-body">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <h3 class="text-center title-2">Form Tambah Produk</h3>
+                                        <h3 class="text-center title-2">Form Tambah Kurir</h3>
                                     </div>
                                     <hr>
-                                    <form action="/produk/add" method="post" novalidate="novalidate">
+                                    <form action="/kurir/tambah" method="post" novalidate="novalidate">
                                         <div class="form-group">
-                                            <label for="cc-payment" class="control-label mb-1">Nama Produk</label>
+                                            <label for="cc-payment" class="control-label mb-1">Nama</label>
                                             <input id="cc-pament" name="nama" type="text" class="form-control"
-                                                aria-required="true" aria-invalid="false" placeholder="Nama Produk">
+                                                aria-required="true" aria-invalid="false" placeholder="Nama Kurir">
                                         </div>
                                         <div class="form-group has-success">
-                                            <label for="cc-name" class="control-label mb-1">Deskripsi</label>
-                                            <input id="cc-name" name="deskripsi" type="text"
+                                            <label for="cc-name" class="control-label mb-1">Alamat</label>
+                                            <input id="cc-name" name="alamat" type="text"
                                                 class="form-control cc-name valid" data-val="true"
-                                                data-val-required="Mohon isi Deskripsi Produk" autocomplete="cc-name"
+                                                data-val-required="Mohon isi Alamat Kurir" autocomplete="cc-name"
                                                 aria-required="true" aria-invalid="false"
-                                                aria-describedby="cc-name-error" placeholder="Deskripsi Produk">
+                                                aria-describedby="cc-name-error" placeholder="Alamat Kurir">
                                             <span class="help-block field-validation-valid" data-valmsg-for="cc-name"
                                                 data-valmsg-replace="true"></span>
                                         </div>
-                                        <hr>
 
                                         <div class="row">
                                             <div class="col-6">
                                                 <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Kategori</label>
-                                                    <select id="cc-exp" name="kategori" type="number"
+                                                    <label for="cc-exp" class="control-label mb-1">Nomor HP</label>
+                                                    <input id="cc-exp" name="noHp" type="number"
                                                         class="form-control cc-exp" value="" data-val="true"
-                                                        data-val-required="Mohon isi Nomor Handphone Distributor"
+                                                        data-val-required="Mohon isi Nomor Handphone Kurir"
                                                         data-val-cc-exp="Mohon isi dengan Angka"
-                                                        placeholder="Nomor Handphone Distributor" autocomplete="cc-exp">
-                                                        <option value="pulsa">Pulsa</option>
-                                                        <option value="paket data">Paket Data</option>
-                                                    </select>
+                                                        placeholder="Nomor Handphone Kurir" autocomplete="cc-exp">
                                                     <span class="help-block" data-valmsg-for="cc-exp"
                                                         data-valmsg-replace="true"></span>
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <label for="x_card_code" class="control-label mb-1">Sub Kategori</label>
+                                                <label for="x_card_code" class="control-label mb-1">Area</label>
                                                 <div class="input-group">
-                                                    <select id="cc-exp" name="subKategor" type="text"
-                                                        class="form-control cc-exp" value="" data-val="true"
-                                                        {{!-- data-val-required="Mohon isi Kategori Produk" --}}
-                                                        {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
-                                                        placeholder="Kategori Produk" autocomplete="cc-exp">
-                                                        <option value="tsel">Tsel</option>
-                                                        <option value="im3">Im3</option>
-                                                        <option value="by. u">By. U</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Harga Jual</label>
-                                                    <input id="cc-exp" name="hargaJual" type="number"
-                                                        class="form-control cc-exp" value="" data-val="true"
-                                                        data-val-required="Mohon isi Harga Jual"
-                                                        data-val-cc-exp="Mohon isi dengan Angka"
-                                                        placeholder="Harga Jual Produk" autocomplete="cc-exp">
-                                                    <span class="help-block" data-valmsg-for="cc-exp"
-                                                        data-valmsg-replace="true"></span>
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <label for="x_card_code" class="control-label mb-1">Harga Beli</label>
-                                                <div class="input-group">
-                                                    <input id="x_card_code" name="hargaBeli" type="number"
+                                                    <input id="x_card_code" name="area" type="text"
                                                         class="form-control cc-cvc" value="" data-val="true"
-                                                        data-val-required="Mohon isi Harga Beli"
-                                                        data-val-cc-cvc="Mohon isi dengan Angka" autocomplete="off"
-                                                        placeholder="Harga Beli Produk">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Stok</label>
-                                                    <input id="cc-exp" name="stok" type="number"
-                                                        class="form-control cc-exp" value="" data-val="true"
-                                                        data-val-required="Mohon isi Stok Produk"
-                                                        data-val-cc-exp="Mohon isi dengan Angka"
-                                                        placeholder="Stok Produk" autocomplete="cc-exp">
-                                                    <span class="help-block" data-valmsg-for="cc-exp"
-                                                        data-valmsg-replace="true"></span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                        data-val-required="Mohon isi Area Pengantaran"
+                                                        data-val-cc-cvc="Mohon isi dengan Huruf" autocomplete="off"
+                                                        placeholder="Area Pengataran">
 
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div>
                                             <button id="payment-button" type="submit"
                                                 class="btn btn-lg btn-info btn-block">
@@ -401,16 +350,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="section__content section__content--p30">
+
+                <div class="section_content section_content--p30">
                     <div class="container-fluid">
+
                         <div class="row m-t-30">
                             <div class="col-md-12">
-                                <h3 class="title-5 m-b-35">produk table</h3>
+                                <h3 class="title-5 m-b-35">kurir table</h3>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-right">
                                         <button class="au-btn au-btn-icon au-btn--green au-btn--small"
-                                            data-toggle="modal" data-target="#modalAddProduk">
-                                            <i class="zmdi zmdi-plus"></i> produk</button>
+                                            data-toggle="modal" data-target="#modalAddKurir">
+                                            <i class="zmdi zmdi-plus"></i>add item</button>
                                     </div>
                                 </div>
 
@@ -419,41 +370,34 @@
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>produk</th>
-                                                <th>deskripsi</th>
-                                                <th>kategori</th>
-                                                <th>sub kategori</th>
-                                                <th>stok</th>
-                                                <th>harga jual</th>
-                                                <th>harga beli</th>
-                                                <th>laba</th>
-                                                <th> </th>
+                                                <th>nama</th>
+                                                <th>alamat</th>
+                                                <th>no. HP</th>
+                                                <th>area</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             {{#each data}}
                                             <tr>
                                                 <td>{{this.nama}}</td>
-                                                <td>{{this.deskripsi}}</td>
-                                                <td>{{this.kategori}}</td>
-                                                <td>{{this.subKategori}}</td>
-                                                <td>{{this.stok}}</td>
-                                                <td>{{this.hargaBeli}}</td>
-                                                <td>{{this.hargaJual}}</td>
-                                                <td>{{this.laba}}</td>
+                                                <td>{{this.alamat}}</td>
+                                                <td>{{this.noHp}}</td>
+                                                <td>{{this.area}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <a href="/produk/edit/{{this.id}}">
-                                                            <button class="item" data-placement="top" title="Edit">
+                                                        <a href="/kurir/edit/{{this.id}}">
+                                                            <button class="item" data-toggle="" data-target=""
+                                                                data-placement="top" title="Edit">
                                                                 <i class="zmdi zmdi-edit"></i>
                                                             </button>
                                                         </a>
 
-                                                        <a href="/produk/delete/{{this.id}}">
-                                                            <button class="item" data-toggle="tooltip" data-target=""
-                                                                data-placement="top" title="Delete">
+                                                        <a href="/kurir/hapus/{{this._id}}">
+                                                            <button class="item" data-placement="top" title="Delete">
                                                                 <i class="zmdi zmdi-delete"></i>
                                                             </button></a>
+                                                    </div>
                                                 </td>
                                             </tr>
                                             {{/each}}
@@ -491,8 +435,8 @@
     <script src="/vendor/animsition/animsition.min.js"></script>
     <script src="/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
     </script>
-    <!-- <script src="vendor/counter-up/jquery.waypoints.min.js"></script> -->
-    <!-- <script src="vendor/counter-up/jquery.counterup.min.js"> -->
+    <!-- <script src="template/vendor/counter-up/jquery.waypoints.min.js"></script> -->
+    <!-- <script src="template/vendor/counter-up/jquery.counterup.min.js"> -->
     </script>
     <!-- <script src="template/vendor/circle-progress/circle-progress.min.js"></script> -->
     <script src="/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
