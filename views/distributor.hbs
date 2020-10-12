@@ -468,11 +468,12 @@
                                                 <td>{{this.pemilik}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" data-toggle="modal"
-                                                            data-target="#modalEditDistributor" data-placement="top"
+                                                        <a href="/distributor/edit/{{this._id}}">
+                                                        <button class="item" data-placement="top"
                                                             title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
+                                                        </a>
 
                                                         <a href="/distributor/hapus/{{this._id}}">
                                                             <button class="item" data-placement="top" title="Delete">
@@ -527,4 +528,6 @@
 
     <!-- Main JS-->
     <script src="/js/main.js"></script>
+
 </body>
+

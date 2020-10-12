@@ -34,8 +34,8 @@ app.use((req, res, next) => {
 
 
 app.set('view engine', 'hbs');
-// app.set('views', path.join(__dirname, 'views/template'))
-app.use(express.static(__dirname+'/public'));
+// app.set('views', path.join(__dirname, 'views/public'))
+app.use(express.static(__dirname + '/public'));
 
 app.use(session({
     secret: 'secrett',

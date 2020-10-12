@@ -33,10 +33,23 @@ router.post("/tambah", async(req, res) => {
 });
 
 
-router.post("/edit/:id", getDistributor, async(req, res) => {
+router.get("/edit/:id", getDistributor, async(req, res) => {
     try {
         const editDistributor = await res.distributor.set(req.body);
-        res.json({ message: "Berhasil Mengubah Data Distributor", data : editDistributor});
+        // res.json({ message: "Berhasil Mengubah Data Distributor", data : editDistributor});
+        res.render('updateDistributor', {
+            data: editDistributor
+        })
+    } catch (err) {
+        res.status(400).json({message: err.message});
+    }
+});
+
+router.post("/edit/:id", async(req, res) => {
+    try {
+        const editDistributor = await Distributor.findByIdAndUpdate({_id: req.params.id, active:true},req.body)
+        // res.json({ message: "Berhasil Mengubah Data Distributor", data : editDistributor});
+        res.redirect('/distributor')
     } catch (err) {
         res.status(400).json({message: err.message});
     }

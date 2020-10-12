@@ -1,8 +1,15 @@
 const worker = require('./workers/penjualan.worker');
+const Agen = require('../models/agenModel')
+const Kurir = require('../models/kurirModel')
 
 module.exports = {
     formAdd : async (req, res)=>{
-        // render form
+        const kurir = await Kurir.find();
+        const agen = await Agen.find();
+        res.render('penjualan', {
+            kurir: kurir,
+            agen: agen
+        });
     },
     addPenjualan : async (req, res)=>{
         const data = req.body
