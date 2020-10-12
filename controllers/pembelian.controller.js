@@ -1,8 +1,12 @@
 const worker = require('./workers/pembelian.worker');
+const Distributor = require('../models/distributorModel');
 
 module.exports = {
     formAdd : async (req, res)=>{
-        // render form
+        const distributor = await Distributor.find();
+        res.render('pembelian', {
+            distributor: distributor
+        })
     },
     addPembelian : async (req, res)=>{
         const data = req.body

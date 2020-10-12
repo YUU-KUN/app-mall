@@ -18,6 +18,7 @@ const Distributor = require('./controllers/distributorController');
 const Kurir = require('./controllers/kurirController');
 const Agen = require('./controllers/agenController');
 const kategori = require('./controllers/kategoriController');
+const user = require('./controllers/userController');
 const pembelian = require('./routes/pembelian.Router');
 const penjualan = require('./routes/penjualan.Router');
 const request = require("supertest");
@@ -33,7 +34,7 @@ app.use((req, res, next) => {
 
 
 app.set('view engine', 'hbs');
-
+// app.set('views', path.join(__dirname, 'views/public'))
 app.use(express.static(__dirname + '/public'));
 
 app.use(session({
@@ -43,9 +44,9 @@ app.use(session({
 }));
 
 app.use('/', userauth);
-app.use('/admin',auth.is_admin,admin);
+app.use('/admin',auth.is_admin,admin); //ASLI
 
-app.use('/example', exampleRouter);
+app.use('/example', exampleRouter); //SEMENTARRA, SINCE WE DON'T HAVE EMIAL & PASSWORD
 // app.use('/admin',exampleUtils,exampleRouter);
 
 app.use('/distributor', Distributor);
@@ -53,6 +54,7 @@ app.use('/kurir', Kurir);
 app.use('/agen', Agen);
 app.use('/kategori',kategori)
 app.use('/produk', routerProduk);
+app.use('/listUser', user);
 
 
 app.use('/pembelian', pembelian);

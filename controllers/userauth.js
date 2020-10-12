@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
 
 router.get('/register', (req, res) => {
     res.render('register', {
-        title: 'Register'
+        title: 'Register',
     })
 })
 
@@ -52,11 +52,19 @@ router.post('/register', async (req, res) => {
     }
 })
 
-router.get('/dashboard', (req, res) => {
-    res.render('dashboardUser', {
-        title: 'Home Page',
-        message: req.session.nama
-    })
+router.get('/', (req, res) => {
+    if (req.session.nama) {
+        res.render('dashboardUser', {
+            title: 'Home Page',
+            message: `Selamat Datang ${req.session.nama}`
+        })
+    } else {
+        res.render('dashboardUser', {
+            title: 'Home Page',
+            message: `Selamat Datang  User!`,
+            subMessage: `Silahkan Kunjungi halaman Produk untuk mulai berbelanja`
+        })
+    }
 })
 
 router.get('/logout', (req, res) => {
