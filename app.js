@@ -44,7 +44,7 @@ app.use(session({
 }));
 
 app.use('/', userauth);
-app.use('/admin',auth.is_admin,admin);
+app.use('/admin',admin);
 
 // app.use('/example', exampleRouter);
 // app.use('/admin',exampleUtils,exampleRouter);
