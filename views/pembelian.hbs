@@ -1,1 +1,404 @@
-{{distributor}}
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>{{title}}</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="/css/font-face.css" rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <!-- <link href="template/vendor/wow/animate.css" rel="stylesheet" media="all"> -->
+    <link href="/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <!-- <link href="template/vendor/select2/select2.min.css" rel="stylesheet" media="all"> -->
+    <link href="/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="/css/theme.css" rel="stylesheet" media="all">
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="/images/icon/logo.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>Distributor</a>
+                        </li>
+
+                        <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>Forms</a>
+                        </li>
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="login.html">Login</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Register</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Forget Password</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <!-- <img src="./images/icon/logo.png" alt="Cool Admin" /> -->
+                    <img src="/images/icon/logo.png" alt="Cool Admin" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a class="js-arrow" href="/dashboard">
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                        </li>
+
+                        <li>
+                            <a href="/distributor">
+                                <i class="fas fa-truck"></i>Distributor</a>
+                        </li>
+
+                        <li>
+                            <a href="/produk">
+                                <i class="fas fa-box"></i>Produk</a>
+                        </li>
+
+                        <li>
+                            <a href="/kategori">
+                                <i class="fas fa-tasks"></i>Kategori</a>
+                        </li>
+
+                        <li>
+                            <a href="/kurir">
+                                <i class="fas fa-motorcycle"></i>Kurir</a>
+                        </li>
+
+                        <li class="active">
+                            <a href="/agen">
+                                <i class="fas fa-users"></i>Agen</a>
+                        </li>
+
+                        <li>
+                            <a href="/listUser">
+                                <i class="fas fa-users"></i>List User</a>
+                        </li>
+
+                        <li>
+                            <a href="/penjualan">
+                                <i class="fas fa-users"></i>Penjualan</a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header" action="" method="POST">
+                                <input class="au-input au-input--xl" type="text" name="search"
+                                    placeholder="Search for datas &amp; reports..." />
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </form>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">john doe</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">john doe</a>
+                                                    </h5>
+                                                    <span class="email">johndoe@example.com</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Account</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-power"></i>Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- END HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <!-- Modal Tambah Distributor-->
+                <div class="modal fade" id="modalAddPembelian" tabindex="-1" role="dialog"
+                    aria-labelledby="modalAddPembelianTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Tambah Pembelian </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3 class="text-center title-2">Form Tambah Pembelian</h3>
+                                    </div>
+                                    <hr>
+                                    <form action="/pembelian/add" method="post" novalidate="novalidate">
+                                        <div class="form-group">
+                                            <label for="cc-payment" class="control-label mb-1">Nama</label>
+                                            <input id="cc-pament" name="nama" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="Nama">
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group has-success">
+                                                    <label for="cc-name" class="control-label mb-1">Jumlah</label>
+                                                    <input id="cc-name" name="jumlah" type="number"
+                                                        class="form-control cc-name valid" data-val="true"
+                                                        data-val-required="Mohon isi Jumlah" autocomplete="cc-name"
+                                                        aria-required="true" aria-invalid="false"
+                                                        aria-describedby="cc-name-error" placeholder="Jumlah">
+                                                    <span class="help-block field-validation-valid"
+                                                        data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group has-success">
+                                                    <label for="cc-name" class="control-label mb-1">Harga Beli</label>
+                                                    <input id="cc-name" name="harga_beli" type="number"
+                                                        class="form-control cc-name valid" data-val="true"
+                                                        data-val-required="Mohon isi Harga Beli" autocomplete="cc-name"
+                                                        aria-required="true" aria-invalid="false"
+                                                        aria-describedby="cc-name-error" placeholder="Harga Beli">
+                                                    <span class="help-block field-validation-valid"
+                                                        data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="form-group">
+                                            <label for="cc-payment" class="control-label mb-1">Tanggal</label>
+                                            <input id="cc-pament" name="tanggal" type="date" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="Tanggal">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="cc-payment" class="control-label mb-1">Invoice</label>
+                                            <input id="cc-pament" name="invoice" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="Invoice">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="cc-payment" class="control-label mb-1">Status</label>
+                                            <input id="cc-pament" name="status" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="Status">
+                                        </div>
+
+                                        <div>
+                                            <button id="payment-button" type="submit"
+                                                class="btn btn-lg btn-info btn-block">
+                                                <i class="fa fa-paper-plane fa-lg"></i>&nbsp;
+                                                <span>Simpan</span>
+                                                {{!-- <span id="payment-button-sending" style="display:none;">Sending…</span> --}}
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- Table --}}
+
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+
+                        <div class="row m-t-30">
+                            <div class="col-md-12">
+                                <h3 class="title-5 m-b-35">pembelian table</h3>
+                                <div class="table-data__tool">
+                                    <div class="table-data__tool-right">
+                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small"
+                                            data-toggle="modal" data-target="#modalAddPembelian">
+                                            <i class="zmdi zmdi-plus"></i> pembelian</button>
+                                    </div>
+                                </div>
+
+                                <!-- DATA TABLE-->
+                                <div class="table-responsive m-b-40">
+                                    <table class="table table-borderless table-data3">
+                                        <thead>
+                                            <tr>
+                                                <th>Distributor ID</th>
+                                                <th>Nama</th>
+                                                <th>Jumlah</th>
+                                                <th>Harga Beli</th>
+                                                <th>Tanggal</th>
+                                                <th>Produk ID</th>
+                                                <th>Invoice</th>
+                                                <th>Status</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{#each data}}
+                                            <tr>
+                                                <td>{{this.distributorId}}</td>
+                                                <td>{{this.nama}}</td>
+                                                <td>{{this.jumlah}}</td>
+                                                <td>{{this.harga_beli}}</td>
+                                                <td>{{this.tanggal}}</td>
+                                                <td>{{this.produkId}}</td>
+                                                <td>{{this.inv}}</td>
+                                                <td>{{this.status}}</td>
+                                                <td>
+                                                    <div class="table-data-feature">
+                                                        <a href="/pembelian/edit/{{this.id}}">
+                                                            <button class="item" data-toggle="" data-target=""
+                                                                data-placement="top" title="Edit">
+                                                                <i class="zmdi zmdi-edit"></i>
+                                                            </button>
+                                                        </a>
+
+                                                        <a href="/pembelian/delete/{{this.id}}">
+                                                            <button class="item" data-placement="top" title="Delete">
+                                                                <i class="zmdi zmdi-delete"></i>
+                                                            </button></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {{/each}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END DATA TABLE-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a
+                                            href="https://colorlib.com">Colorlib</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Jquery JS-->
+    <script src="/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="/vendor/slick/slick.min.js">
+    </script>
+    <!-- <script src="views/template/vendor/wow/wow.min.js"></script> -->
+    <script src="/vendor/animsition/animsition.min.js"></script>
+    <script src="/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <!-- <script src="template/vendor/counter-up/jquery.waypoints.min.js"></script> -->
+    <!-- <script src="template/vendor/counter-up/jquery.counterup.min.js"> -->
+    </script>
+    <!-- <script src="template/vendor/circle-progress/circle-progress.min.js"></script> -->
+    <script src="/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <!-- <script src="template/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="template/vendor/select2/select2.min.js"> -->
+    </script>
+
+    <!-- Main JS-->
+    <script src="/js/main.js"></script>
+</body>

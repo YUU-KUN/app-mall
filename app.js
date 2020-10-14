@@ -20,6 +20,7 @@ const pembelian = require('./routes/pembelian.Router');
 const penjualan = require('./routes/penjualan.Router');
 const request = require("supertest");
 const admin = require('./controllers/adminController')
+const exampleRouter = require('./controllers/example.Controller')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -43,7 +44,7 @@ app.use(session({
 app.use('/', userauth);
 app.use('/admin',admin);
 
-app.use('/example', exampleRouter); //SEMENTARRA, SINCE WE DON'T HAVE EMIAL & PASSWORD
+app.use('/example', exampleRouter); //SEMENTARA, SINCE WE DON'T HAVE EMIAL & PASSWORD
 // app.use('/admin',exampleUtils,exampleRouter);
 
 app.use('/distributor', Distributor);
