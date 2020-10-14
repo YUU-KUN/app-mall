@@ -11,16 +11,15 @@ const {
     deletePembelian
 } = require('../controllers/pembelian.controller');
 
+// Add Form
+router.get('/add', formAdd)
+router.get('/edit/:id', formEdit)
+
 // Api
 router.get('/', getAllPembelian)
 router.get('/:id', getPembelianById)
 router.post('/add', addPembelian)
 router.put('/edit/:id', editPembelian) 
 router.delete('/delete/:id', deletePembelian)
-
-// Add Form
-router.get('/add', formAdd)
-router.get('/edit', formEdit)
-
 
 module.exports = router

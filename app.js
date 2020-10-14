@@ -10,9 +10,6 @@ var session = require('express-session')
 const userauth = require('./controllers/userauth');
 const auth = require('./utils/authlogin')
 
-const exampleRouter = require('./controllers/example.Controller');
-//const exampleUtils = require('./utils/example.Utils')
-
 const routerProduk = require('./controllers/routerProduk');
 const Distributor = require('./controllers/distributorController');
 const Kurir = require('./controllers/kurirController');
@@ -54,7 +51,6 @@ app.use('/kurir', Kurir);
 app.use('/agen', Agen);
 app.use('/kategori',kategori)
 app.use('/produk', routerProduk);
-
 
 app.use('/pembelian', pembelian);
 app.use('/penjualan', penjualan);
