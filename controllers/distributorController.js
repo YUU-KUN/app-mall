@@ -2,7 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Distributor = require('../models/distributorModel');
 
+<<<<<<< HEAD
 router.get("/", async (req, res) => {
+=======
+
+router.get("/", async(req, res) => {
+    const sess = req.session
+    console.log(sess)
+>>>>>>> 90a200b9c2e8c724faf6809b8540dae780e364ca
     try {
         const distributor = await Distributor.find();
         if (req.session.nama && req.session.email) {

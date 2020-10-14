@@ -2,13 +2,12 @@ const mongoose = require('mongoose');
 
 var penjualanSchema = new mongoose.Schema({
     produk: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "produk"
     },
     agen: {
-        type: String
-    },
-    nama_agen: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user"
     },
     nama: {
         type: String
@@ -43,11 +42,12 @@ var penjualanSchema = new mongoose.Schema({
     total:{
         type:Number
     },
-    tipePengiriman:{
+    tipe_pengiriman:{
         type:String
     },
     kurir:{
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "kurir" 
     },
     ongkir: {
         type: Number
@@ -62,6 +62,5 @@ var penjualanSchema = new mongoose.Schema({
         type:String
     }
 });
-
 
 module.exports = mongoose.model('penjualan', penjualanSchema);

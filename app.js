@@ -10,9 +10,6 @@ var session = require('express-session')
 const userauth = require('./controllers/userauth');
 const auth = require('./utils/authlogin')
 
-const exampleRouter = require('./controllers/example.Controller');
-//const exampleUtils = require('./utils/example.Utils')
-
 const routerProduk = require('./controllers/routerProduk');
 const Distributor = require('./controllers/distributorController');
 const Kurir = require('./controllers/kurirController');
@@ -44,7 +41,7 @@ app.use(session({
 }));
 
 app.use('/', userauth);
-app.use('/admin',auth.is_admin,admin); //ASLI
+app.use('/admin',admin);
 
 app.use('/example', exampleRouter); //SEMENTARRA, SINCE WE DON'T HAVE EMIAL & PASSWORD
 // app.use('/admin',exampleUtils,exampleRouter);
@@ -55,7 +52,6 @@ app.use('/agen', Agen);
 app.use('/kategori',kategori)
 app.use('/produk', routerProduk);
 app.use('/listUser', user);
-
 
 app.use('/pembelian', pembelian);
 app.use('/penjualan', penjualan);

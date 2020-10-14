@@ -6,7 +6,7 @@ module.exports = {
         return result
     },
     update : async (payload)=>{
-        const result = await pembelian.findByIdAndUpdate({_id : payload._id}, payload.payload)
+        const result = await pembelian.findOneAndUpdate({_id : payload._id}, payload.payload)
         return result
     },
     delete : async (payload)=>{

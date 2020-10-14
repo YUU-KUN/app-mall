@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 var pembelian = new mongoose.Schema({
     distributorId: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "distributor"
     },
     nama: {
         type: String
@@ -17,7 +18,8 @@ var pembelian = new mongoose.Schema({
         type: Date
     },
     produkId: {
-        type: String
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "produk"
     },
     inv:{
         type: String
