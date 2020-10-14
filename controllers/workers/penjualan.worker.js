@@ -31,8 +31,15 @@ module.exports = {
         return recordset
     },
     create : async (data)=>{
+        // let nama = ''
+        // console.log(data.sess)
+        // console.log(data.sess.nama)
+        // if(data.sess.nama == undefined){
+        //     nama = 'nur'
+        //     data.sess.nama = nama
+        // } 
         const getProduk = await produk.getByName(data.data.produk)
-        const getUser = await user.getByName(data.data.agen)
+        const getUser = await user.getByName(data.sess.nama)
         let ongkir 
         if (data.data.tipe_pengiriman == "kurir"){
             ongkir = 10000

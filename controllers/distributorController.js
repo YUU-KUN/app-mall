@@ -4,6 +4,8 @@ const Distributor = require('../models/distributorModel');
 
 
 router.get("/", async(req, res) => {
+    const sess = req.session
+    console.log(sess)
     try {
         const distributor = await Distributor.find();
         res.render('distributor', {
