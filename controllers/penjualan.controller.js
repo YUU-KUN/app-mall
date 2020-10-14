@@ -15,7 +15,8 @@ module.exports = {
         const data = req.body
         try {
             const result = await worker.create(data)
-            res.status(200).json({ message: 'Berhasil', data: result })
+            // res.status(200).json({ message: 'Berhasil', data: result })
+            res.redirect('/penjualan')
         } catch (err) {
             res.status(400).json({ message: 'error', error: err.message })
         }
@@ -63,7 +64,9 @@ module.exports = {
         }
         try {
             const result = await worker.delete(data)
-            res.status(200).json({ message: 'Berhasil', data: result })
+            // res.status(200).json({ message: 'Berhasil', data: result })
+            console.log( 'Berhasil Hapus Data Penjualan' );
+            res.redirect('/penjualan')
         } catch (err) {
             res.status(400).json({ message: 'error', error: err.message })
         }

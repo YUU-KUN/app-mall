@@ -211,12 +211,12 @@
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <!-- Modal Tambah Distributor-->
-                <div class="modal fade" id="modalAddAgen" tabindex="-1" role="dialog"
-                    aria-labelledby="modalAddAgenTitle" aria-hidden="true">
+                <div class="modal fade" id="modalAddPenjualan" tabindex="-1" role="dialog"
+                    aria-labelledby="modalAddPenjualanTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Tambah Agen </h5>
+                                <h5 class="modal-title" id="exampleModalLongTitle">Tambah Penjualan </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -224,47 +224,234 @@
                             <div class="modal-body">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <h3 class="text-center title-2">Form Tambah Agen</h3>
+                                        <h3 class="text-center title-2">Form Tambah Penjualan</h3>
                                     </div>
                                     <hr>
-                                    <form action="/agen/tambah" method="post" novalidate="novalidate">
+                                    <form action="/penjualan/add" method="post" novalidate="novalidate">
                                         <div class="form-group">
-                                            <label for="cc-payment" class="control-label mb-1">Nama</label>
-                                            <input id="cc-pament" name="nama" type="text" class="form-control"
-                                                aria-required="true" aria-invalid="false" placeholder="Nama Agen">
-                                        </div>
-                                        <div class="form-group has-success">
-                                            <label for="cc-name" class="control-label mb-1">Alamat</label>
-                                            <input id="cc-name" name="alamat" type="text"
-                                                class="form-control cc-name valid" data-val="true"
-                                                data-val-required="Mohon isi Alamat Agen" autocomplete="cc-name"
-                                                aria-required="true" aria-invalid="false"
-                                                aria-describedby="cc-name-error" placeholder="Alamat Agen">
-                                            <span class="help-block field-validation-valid" data-valmsg-for="cc-name"
-                                                data-valmsg-replace="true"></span>
+                                            <label for="cc-payment" class="control-label mb-1">Produk</label>
+                                            <input id="cc-pament" name="produk" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="Nama Produk">
                                         </div>
 
                                         <div class="row">
                                             <div class="col-6">
+                                                <div class="form-group has-success">
+                                                    <label for="cc-name" class="control-label mb-1">Agen</label>
+                                                    <input id="cc-name" name="agen" type="text"
+                                                        class="form-control cc-name valid" data-val="true"
+                                                        data-val-required="Mohon isi Agen" autocomplete="cc-name"
+                                                        aria-required="true" aria-invalid="false"
+                                                        aria-describedby="cc-name-error" placeholder="Agen">
+                                                    <span class="help-block field-validation-valid"
+                                                        data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group has-success">
+                                                    <label for="cc-name" class="control-label mb-1">Nama Agen</label>
+                                                    <input id="cc-name" name="nama_agen" type="text"
+                                                        class="form-control cc-name valid" data-val="true"
+                                                        data-val-required="Mohon isi Nama Agen" autocomplete="cc-name"
+                                                        aria-required="true" aria-invalid="false"
+                                                        aria-describedby="cc-name-error" placeholder="Nama Agen">
+                                                    <span class="help-block field-validation-valid"
+                                                        data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="form-group">
+                                            <label for="cc-payment" class="control-label mb-1">Nama</label>
+                                            <input id="cc-pament" name="nama" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="Nama">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="cc-payment" class="control-label mb-1">Deskripsi</label>
+                                            <input id="cc-pament" name="deskripsi" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="Deskripsi">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="cc-payment" class="control-label mb-1">Jumlah</label>
+                                            <input id="cc-pament" name="jumlah" type="text" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="Jumlah">
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="row">
+                                            <div class="col-6">
                                                 <div class="form-group">
-                                                    <label for="cc-exp" class="control-label mb-1">Nomor HP</label>
-                                                    <input id="cc-exp" name="noHp" type="number"
+                                                    <label for="cc-exp" class="control-label mb-1">Harga Beli</label>
+                                                    <input id="cc-exp" name="harga_beli" type="number"
                                                         class="form-control cc-exp" value="" data-val="true"
-                                                        data-val-required="Mohon isi Nomor Handphone Agen"
+                                                        data-val-required="Mohon isi Harga Beli"
                                                         data-val-cc-exp="Mohon isi dengan Angka"
-                                                        placeholder="Nomor Handphone Agen" autocomplete="cc-exp">
+                                                        placeholder="Nomor Harga Beli" autocomplete="cc-exp">
                                                     <span class="help-block" data-valmsg-for="cc-exp"
                                                         data-valmsg-replace="true"></span>
                                                 </div>
                                             </div>
                                             <div class="col-6">
-                                                <label for="x_card_code" class="control-label mb-1">Pemilik</label>
+                                                <label for="x_card_code" class="control-label mb-1">Harga Jual</label>
                                                 <div class="input-group">
-                                                    <input id="x_card_code" name="pemilik" type="text"
+                                                    <input id="x_card_code" name="harga_jual" type="number"
                                                         class="form-control cc-cvc" value="" data-val="true"
-                                                        data-val-required="Mohon isi Nama Pemilik"
+                                                        data-val-required="Mohon isi Harga Jual"
                                                         data-val-cc-cvc="Mohon isi dengan Huruf" autocomplete="off"
-                                                        placeholder="Nama Pemilik">
+                                                        placeholder="Harga Jual">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="cc-payment" class="control-label mb-1">Laba</label>
+                                            <input id="cc-pament" name="laba" type="number" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="Laba">
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label mb-1">Kategori</label>
+                                                    <input id="cc-exp" name="kategori" type="text"
+                                                        class="form-control cc-exp" value="" data-val="true"
+                                                        data-val-required="Mohon isi Kategori"
+                                                        data-val-cc-exp="Mohon isi dengan Angka" placeholder="Kategori"
+                                                        autocomplete="cc-exp">
+                                                    <span class="help-block" data-valmsg-for="cc-exp"
+                                                        data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="x_card_code" class="control-label mb-1">Sub Kategori</label>
+                                                <div class="input-group">
+                                                    <input id="x_card_code" name="sub_kategori" type="text"
+                                                        class="form-control cc-cvc" value="" data-val="true"
+                                                        data-val-required="Mohon isi Sub Kategori"
+                                                        data-val-cc-cvc="Mohon isi dengan Huruf" autocomplete="off"
+                                                        placeholder="Sub Kategori">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label mb-1">Tanggal</label>
+                                                    <input id="cc-exp" name="tanggal" type="date"
+                                                        class="form-control cc-exp" value="" data-val="true"
+                                                        data-val-required="Mohon isi Tanggal"
+                                                        data-val-cc-exp="Mohon isi dengan Angka" placeholder="Tanggal"
+                                                        autocomplete="cc-exp">
+                                                    <span class="help-block" data-valmsg-for="cc-exp"
+                                                        data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="x_card_code" class="control-label mb-1">invoice</label>
+                                                <div class="input-group">
+                                                    <input id="x_card_code" name="inv" type="text"
+                                                        class="form-control cc-cvc" value="" data-val="true"
+                                                        data-val-required="Mohon isi invoice"
+                                                        data-val-cc-cvc="Mohon isi dengan Huruf" autocomplete="off"
+                                                        placeholder="invoice">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="cc-payment" class="control-label mb-1">Total</label>
+                                            <input id="cc-pament" name="total" type="number" class="form-control"
+                                                aria-required="true" aria-invalid="false" placeholder="Total">
+                                        </div>
+
+                                        <hr>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label mb-1">Tipe
+                                                        Pengiriman</label>
+                                                    <input id="cc-exp" name="tipePengiriman" type="text"
+                                                        class="form-control cc-exp" value="" data-val="true"
+                                                        data-val-required="Mohon isi Tipe Pengiriman"
+                                                        data-val-cc-exp="Mohon isi dengan Angka"
+                                                        placeholder="Tipe Pengiriman" autocomplete="cc-exp">
+                                                    <span class="help-block" data-valmsg-for="cc-exp"
+                                                        data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="x_card_code" class="control-label mb-1">Kurir</label>
+                                                <div class="input-group">
+                                                    <input id="x_card_code" name="kurir" type="text"
+                                                        class="form-control cc-cvc" value="" data-val="true"
+                                                        data-val-required="Mohon isi Kurir"
+                                                        data-val-cc-cvc="Mohon isi dengan Huruf" autocomplete="off"
+                                                        placeholder="Kurir">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label mb-1">Ongkir</label>
+                                                    <input id="cc-exp" name="ongkir" type="number"
+                                                        class="form-control cc-exp" value="" data-val="true"
+                                                        data-val-required="Mohon isi Ongkir"
+                                                        data-val-cc-exp="Mohon isi dengan Angka" placeholder="Ongkir"
+                                                        autocomplete="cc-exp">
+                                                    <span class="help-block" data-valmsg-for="cc-exp"
+                                                        data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="x_card_code" class="control-label mb-1">Nama Kurir</label>
+                                                <div class="input-group">
+                                                    <input id="x_card_code" name="nama_kurir" type="text"
+                                                        class="form-control cc-cvc" value="" data-val="true"
+                                                        data-val-required="Mohon isi Nama Kurir"
+                                                        data-val-cc-cvc="Mohon isi dengan Huruf" autocomplete="off"
+                                                        placeholder="Nama Kurir">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="cc-exp" class="control-label mb-1">Nomor HP
+                                                        Kurir</label>
+                                                    <input id="cc-exp" name="nohp_kurir" type="number"
+                                                        class="form-control cc-exp" value="" data-val="true"
+                                                        data-val-required="Mohon isi Nomor Handphone Kurir"
+                                                        data-val-cc-exp="Mohon isi dengan Angka"
+                                                        placeholder="Nomor Handphone Kurir" autocomplete="cc-exp">
+                                                    <span class="help-block" data-valmsg-for="cc-exp"
+                                                        data-valmsg-replace="true"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="x_card_code" class="control-label mb-1">Status</label>
+                                                <div class="input-group">
+                                                    <input id="x_card_code" name="status" type="text"
+                                                        class="form-control cc-cvc" value="" data-val="true"
+                                                        data-val-required="Mohon isi Status"
+                                                        data-val-cc-cvc="Mohon isi dengan Huruf" autocomplete="off"
+                                                        placeholder="Status">
 
                                                 </div>
                                             </div>
@@ -291,12 +478,12 @@
 
                         <div class="row m-t-30">
                             <div class="col-md-12">
-                                <h3 class="title-5 m-b-35">agen table</h3>
+                                <h3 class="title-5 m-b-35">penjualan table</h3>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-right">
                                         <button class="au-btn au-btn-icon au-btn--green au-btn--small"
-                                            data-toggle="modal" data-target="#modalAddAgen">
-                                            <i class="zmdi zmdi-plus"></i> agen</button>
+                                            data-toggle="modal" data-target="#modalAddPenjualan">
+                                            <i class="zmdi zmdi-plus"></i> penjualan</button>
                                     </div>
                                 </div>
 
@@ -353,14 +540,14 @@
                                                 <td>{{this.status}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <a href="/agen/edit/{{this.id}}">
+                                                        <a href="/penjualan/edit/{{this.id}}">
                                                             <button class="item" data-toggle="" data-target=""
                                                                 data-placement="top" title="Edit">
                                                                 <i class="zmdi zmdi-edit"></i>
                                                             </button>
                                                         </a>
 
-                                                        <a href="/agen/hapus/{{this._id}}">
+                                                        <a href="/penjualan/delete/{{this.id}}">
                                                             <button class="item" data-placement="top" title="Delete">
                                                                 <i class="zmdi zmdi-delete"></i>
                                                             </button></a>

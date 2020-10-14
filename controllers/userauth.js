@@ -1,5 +1,6 @@
 const express = require('express')
 const User = require('../models/user')
+const Produk = require('../models/modelProduk')
 const router = express.Router()
 
 router.get('/login', (req, res) => {
@@ -65,6 +66,14 @@ router.get('/', (req, res) => {
             subMessage: `Silahkan Kunjungi halaman Produk untuk mulai berbelanja`
         })
     }
+})
+
+router.get('/produkUser', async (req, res) => {
+    const produkUser = await Produk.find();
+    res.render('produkUser', {
+        data: produkUser
+    })
+    console.log(produkUser);
 })
 
 router.get('/logout', (req, res) => {

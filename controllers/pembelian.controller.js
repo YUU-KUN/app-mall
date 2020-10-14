@@ -21,6 +21,7 @@ module.exports = {
         try{
             const result = await worker.getAll()
             res.status(200).json({message: 'Berhasil',data: result})
+            console.log(result);
         }catch(err){
             res.status(400).json({message: 'error', error: err.message})
         }

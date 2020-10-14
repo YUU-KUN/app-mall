@@ -12,7 +12,7 @@ const {
 } = require('../controllers/pembelian.controller');
 
 // Api
-router.get('/', getAllPembelian)
+router.get('/', getAllPembelian) 
 router.get('/:id', getPembelianById)
 router.post('/add', addPembelian)
 router.put('/edit/:id', editPembelian) 
