@@ -15,6 +15,7 @@ const Distributor = require('./controllers/distributorController');
 const Kurir = require('./controllers/kurirController');
 const Agen = require('./controllers/agenController');
 const kategori = require('./controllers/kategoriController');
+const user = require('./controllers/userController');
 const pembelian = require('./routes/pembelian.Router');
 const penjualan = require('./routes/penjualan.Router');
 const request = require("supertest");
@@ -22,7 +23,6 @@ const admin = require('./controllers/adminController')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -43,7 +43,7 @@ app.use(session({
 app.use('/', userauth);
 app.use('/admin',admin);
 
-// app.use('/example', exampleRouter);
+app.use('/example', exampleRouter); //SEMENTARRA, SINCE WE DON'T HAVE EMIAL & PASSWORD
 // app.use('/admin',exampleUtils,exampleRouter);
 
 app.use('/distributor', Distributor);
@@ -51,6 +51,7 @@ app.use('/kurir', Kurir);
 app.use('/agen', Agen);
 app.use('/kategori',kategori)
 app.use('/produk', routerProduk);
+app.use('/listUser', user);
 
 app.use('/pembelian', pembelian);
 app.use('/penjualan', penjualan);

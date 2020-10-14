@@ -16,7 +16,7 @@ router.get('/add', formAdd)
 router.get('/edit/:id', formEdit)
 
 // Api
-router.get('/', getAllPembelian)
+router.get('/', getAllPembelian) 
 router.get('/:id', getPembelianById)
 router.post('/add', addPembelian)
 router.put('/edit/:id', editPembelian) 

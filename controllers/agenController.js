@@ -7,7 +7,8 @@ router.get("/", async(req, res) => {
     try {
         const agen = await Agen.find();
         res.render('agen', {
-            data: agen
+            data: agen,
+            title: 'Agen List'
         })
         // res.json(agen);
     } catch (err) {
@@ -36,7 +37,8 @@ router.get("/edit/:id", getAgen, async(req, res) => {
         const editAgen = await res.agen.set(req.body);
         // res.json({ message: "Berhasil Mengubah Data Distributor", data : editAgen});
         res.render('editAgen', {
-            data: editAgen
+            data: editAgen,
+            title: 'Edit Agen'
         });
     } catch (err) {
         res.status(400).json({message: err.message});

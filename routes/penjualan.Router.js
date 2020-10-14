@@ -23,8 +23,8 @@ router.get('/', getAllPenjualan)
 router.get('/:id', getPenjualanById)
 router.post('/add', addPenjualan)
 router.post('/:id', doPembayaran)
-router.put('/edit/:id', editPenjualan) 
-router.delete('/delete/:id', deletePenjualan)
+router.post('/edit/:id', editPenjualan) 
+router.get('/delete/:id', deletePenjualan)
 
 
 module.exports = router
