@@ -2,24 +2,24 @@ const worker = require('./workers/pembelian.worker');
 // const Distributor = require('../models/distributorModel');
 
 module.exports = {
-    formAdd : async (req, res)=>{
-        try{
-            const result = await worker.getData()            
-            // render form
-            res.render('pembelian', {
-                data: result
-            })
-        }catch(err){
-            res.status(400).json({message: 'error', error: err.message})
-        } 
-    },
+    // formAdd : async (req, res)=>{
+    //     try{
+    //         const result = await worker.getData()            
+    //         // render form
+    //         res.render('pembelian', {
+    //             data: result
+    //         })
+    //     }catch(err){
+    //         res.status(400).json({message: 'error', error: err.message})
+    //     } 
+    // },
     addPembelian : async (req, res)=>{
         const data = req.body
         try{
             const result = await worker.create(data)
             // render view
-
-            res.status(200).json({message: 'Berhasil',data: result})
+            res.redirect('/pembelian')
+            // res.status(200).json({message: 'Berhasil',data: result})
         }catch(err){
             res.status(400).json({message: 'error', error: err.message})
             console.log(err);
@@ -28,9 +28,28 @@ module.exports = {
     getAllPembelian : async (req, res)=>{
         try{
             const result = await worker.getAll()
-            res.render('pembelian', {
-                data: result
-            })
+            const result2 = await worker.getData()  
+            const data = {
+                result,
+                result2
+            }
+            if (req.session.nama) {
+                res.render('pembelian', {
+                    data: data,
+                    // title: 'Home Page',
+                    // message: `Selamat Datang ${req.session.nama}`,
+                    username: `${req.session.nama}`,
+                    email: `${req.session.email}`
+                })
+            } else {
+                res.render('dashboardUser', {
+                    // title: 'Home Page',
+                    // message: `Selamat Datang  User!`,
+                    // subMessage: `Silahkan Kunjungi halaman Produk untuk mulai berbelanja`,
+                    username: 'User',
+                    email: 'user@user.com'
+                })
+            }
 
             // res.status(200).json({message: 'Berhasil',data: result})
             console.log(result);
@@ -42,7 +61,6 @@ module.exports = {
         try{
             const result = await worker.getById({_id : req.params.id})
             // render view
-
             res.status(200).json({message: 'Berhasil',data: result})
         }catch(err){
             res.status(400).json({message: 'error', error: err.message})
@@ -78,9 +96,9 @@ module.exports = {
         }
         try{
             const result = await worker.delete(data)
-            // redirect view pembeilan
+            res.redirect('/pembelian')
 
-            res.status(200).json({message: 'Berhasil',data: result})
+            // res.status(200).json({message: 'Berhasil',data: result})
         }catch(err){
             res.status(400).json({message: 'error', error: err.message})
         }

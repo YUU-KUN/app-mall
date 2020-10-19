@@ -30,15 +30,15 @@ module.exports = {
     },
     create : async (data)=>{
         const getDistributor = await distributor.getByName(data.nama)
-        const getProduk = await produk.getByName(data.produkId)
+        const getProduk = await produk.getByName(data.produk)
         const payload = {
             distributorId: getDistributor._id,
             nama: getDistributor.nama,
             jumlah: data.jumlah,
-            harga_beli: getProduk.hargaBeli,
+            harga_beli: data.harga_beli,
             tanggal: data.tanggal,
             produkId: getProduk._id,
-            inv: "inv",
+            inv: data.inv,
             status: data.status
         } 
         // const amount = getProduk.stok + parseInt(data.jumlah)

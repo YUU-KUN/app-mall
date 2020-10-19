@@ -7,7 +7,7 @@ var penjualanSchema = new mongoose.Schema({
     },
     agen: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "user"
+        ref: "agen" || "user"
     },
     nama: {
         type: String

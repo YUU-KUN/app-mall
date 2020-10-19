@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise
 
 const uri = 'mongodb://localhost/app-mall'
 
-module.exports = mongoose.connect('mongodb+srv://team2:5MwItjLEhPHWsEiz@percobaan.alaon.mongodb.net/team2?retryWrites=true&w=majority' && uri,{
+module.exports = mongoose.connect('mongodb+srv://team2:5MwItjLEhPHWsEiz@percobaan.alaon.mongodb.net/team2?retryWrites=true&w=majority',{
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false 

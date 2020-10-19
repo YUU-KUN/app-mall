@@ -57,22 +57,39 @@ router.get('/', (req, res) => {
     if (req.session.nama) {
         res.render('dashboardUser', {
             title: 'Home Page',
-            message: `Selamat Datang ${req.session.nama}`
+            message: `Selamat Datang ${req.session.nama}`,
+            username: `${req.session.nama}`,
+            email: `${req.session.email}`
         })
     } else {
         res.render('dashboardUser', {
             title: 'Home Page',
             message: `Selamat Datang  User!`,
-            subMessage: `Silahkan Kunjungi halaman Produk untuk mulai berbelanja`
+            subMessage: `Silahkan Kunjungi halaman Produk untuk mulai berbelanja`,
+            username: 'User',
+            email: 'user@user.com'
         })
     }
 })
 
 router.get('/produkUser', async (req, res) => {
     const produkUser = await Produk.find();
-    res.render('produkUser', {
-        data: produkUser
-    })
+    if (req.session.nama) {
+        res.render('produkUser', {
+            // title: 'Home Page',
+            data: produkUser,
+            username: `${req.session.nama}`,
+            email: `${req.session.email}`
+        })
+    } else {
+        res.render('produkUser', {
+            // title: 'Home Page',
+            // message: `Selamat Datang  User!`,
+            // subMessage: `Silahkan Kunjungi halaman Produk untuk mulai berbelanja`,
+            username: 'User',
+            email: 'user@user.com'
+        })
+    }
     console.log(produkUser);
 })
 

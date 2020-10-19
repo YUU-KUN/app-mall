@@ -101,40 +101,14 @@
                         </li>
 
                         <li>
-                            <a href="/distributor">
-                                <i class="fas fa-truck"></i>Distributor</a>
-                        </li>
-
-                        <li>
-                            <a href="/produk">
+                            <a href="/produkUser">
                                 <i class="fas fa-box"></i>Produk</a>
                         </li>
 
-                        <li>
-                            <a href="/kategori">
-                                <i class="fas fa-tasks"></i>Kategori</a>
-                        </li>
-
-                        <li>
-                            <a href="/kurir">
-                                <i class="fas fa-motorcycle"></i>Kurir</a>
-                        </li>
-
                         <li class="active">
-                            <a href="/agen">
-                                <i class="fas fa-users"></i>Agen</a>
+                            <a href="/pembelian">
+                                <i class="fas fa-box"></i>Pembelian</a>
                         </li>
-
-                        <li>
-                            <a href="/listUser">
-                                <i class="fas fa-users"></i>List User</a>
-                        </li>
-
-                        <li>
-                            <a href="/penjualan">
-                                <i class="fas fa-users"></i>Penjualan</a>
-                        </li>
-
                     </ul>
                 </nav>
             </div>
@@ -164,7 +138,7 @@
                                             <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#">{{username}}</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -175,9 +149,9 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        <a href="#">{{username}}</a>
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email">{{email}}</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
@@ -229,9 +203,32 @@
                                     <hr>
                                     <form action="/pembelian/add" method="post" novalidate="novalidate">
                                         <div class="form-group">
-                                            <label for="cc-payment" class="control-label mb-1">Nama</label>
-                                            <input id="cc-pament" name="nama" type="text" class="form-control"
-                                                aria-required="true" aria-invalid="false" placeholder="Nama">
+                                            <label for="x_card_code" class="control-label mb-1">Nama</label>
+                                                <div class="input-group">
+                                                    <select id="cc-exp" name="nama" type="text"
+                                                        class="form-control cc-exp" value="" data-val="true"
+                                                        {{!-- data-val-required="Mohon isi Kategori Produk" --}}
+                                                        {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
+                                                        placeholder="Produk" autocomplete="cc-exp">
+                                                        {{#each data.result2.distributor}}
+                                                        <option value="{{this}}">{{this}}</option>
+                                                        {{/each}}
+                                                    </select>
+                                                </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="x_card_code" class="control-label mb-1">Produk</label>
+                                                <div class="input-group">
+                                                    <select id="cc-exp" name="produk" type="text"
+                                                        class="form-control cc-exp" value="" data-val="true"
+                                                        {{!-- data-val-required="Mohon isi Kategori Produk" --}}
+                                                        {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
+                                                        placeholder="Produk" autocomplete="cc-exp">
+                                                        {{#each data.result2.produk}}
+                                                        <option value="{{this}}">{{this}}</option>
+                                                        {{/each}}
+                                                    </select>
+                                                </div>
                                         </div>
 
                                         <div class="row">
@@ -271,14 +268,22 @@
 
                                         <div class="form-group">
                                             <label for="cc-payment" class="control-label mb-1">Invoice</label>
-                                            <input id="cc-pament" name="invoice" type="text" class="form-control"
+                                            <input id="cc-pament" name="inv" type="text" class="form-control"
                                                 aria-required="true" aria-invalid="false" placeholder="Invoice">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="cc-payment" class="control-label mb-1">Status</label>
-                                            <input id="cc-pament" name="status" type="text" class="form-control"
-                                                aria-required="true" aria-invalid="false" placeholder="Status">
+                                            <label for="x_card_code" class="control-label mb-1">Status</label>
+                                                <div class="input-group">
+                                                        <select id="cc-exp" name="status" type="text"
+                                                            class="form-control cc-exp" value="" data-val="true"
+                                                            {{!-- data-val-required="Mohon isi Kategori Produk" --}}
+                                                            {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
+                                                            placeholder="Status" autocomplete="cc-exp">
+                                                            <option value="dibayar">dibeli</option>
+                                                            <option value="dikemas">diverivikasi</option>
+                                                        </select>
+                                                </div>
                                         </div>
 
                                         <div>
@@ -317,26 +322,26 @@
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>Distributor ID</th>
+                                                <th>Distributor</th>
                                                 <th>Nama</th>
                                                 <th>Jumlah</th>
                                                 <th>Harga Beli</th>
                                                 <th>Tanggal</th>
-                                                <th>Produk ID</th>
+                                                <th>Produk</th>
                                                 <th>Invoice</th>
                                                 <th>Status</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{#each data}}
+                                            {{#each data.result}}
                                             <tr>
-                                                <td>{{this.distributorId}}</td>
+                                                <td>{{this.distributorId.nama}}</td>
                                                 <td>{{this.nama}}</td>
                                                 <td>{{this.jumlah}}</td>
                                                 <td>{{this.harga_beli}}</td>
                                                 <td>{{this.tanggal}}</td>
-                                                <td>{{this.produkId}}</td>
+                                                <td>{{this.produkId.nama}}</td>
                                                 <td>{{this.inv}}</td>
                                                 <td>{{this.status}}</td>
                                                 <td>

@@ -15,6 +15,7 @@ module.exports = {
     },
     getByName : async (payload)=>{
         const result = await agen.findOne(payload)
+        console.log(result)
         return result
     }
 }
