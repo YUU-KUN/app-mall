@@ -13,18 +13,33 @@ const {
 } = require('../controllers/penjualan.controller');
 
 // Form
-router.get('/add', formAdd)
+// router.get('/add', formAdd)
 router.get('/edit', formEdit)
 
-// User
-
-// Api
 router.get('/', getAllPenjualan)
 router.get('/:id', getPenjualanById)
-router.post('/add', addPenjualan)
-router.post('/:id', doPembayaran)
-router.post('/edit/:id', editPenjualan) 
 router.get('/delete/:id', deletePenjualan)
+
+router.post('/add', addPenjualan)
+// router.post('/:id', doPembayaran)
+router.post('/edit/:id', editPenjualan) 
+
+/**
+ * My API "dont use this"
+ */
+
+// Form
+// router.get('/api/add', formAdd)
+// router.get('/api/edit', formEdit)
+
+// // User
+
+// router.get('/api/', getAllPenjualan)
+// router.get('/api/:id', getPenjualanById)
+// router.post('/api/add', addPenjualan)
+// router.post('/api/:id', doPembayaran)
+// router.put('/api/edit/:id', editPenjualan) 
+// router.delete('/api/delete/:id', deletePenjualan)
 
 
 module.exports = router

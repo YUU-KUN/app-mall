@@ -2,24 +2,24 @@ const worker = require('./workers/pembelian.worker');
 // const Distributor = require('../models/distributorModel');
 
 module.exports = {
-    formAdd : async (req, res)=>{
-        try{
-            const result = await worker.getData()            
-            // render form
-            res.render('pembelian', {
-                data: result
-            })
-        }catch(err){
-            res.status(400).json({message: 'error', error: err.message})
-        } 
-    },
+    // formAdd : async (req, res)=>{
+    //     try{
+    //         const result = await worker.getData()            
+    //         // render form
+    //         res.render('pembelian', {
+    //             data: result
+    //         })
+    //     }catch(err){
+    //         res.status(400).json({message: 'error', error: err.message})
+    //     } 
+    // },
     addPembelian : async (req, res)=>{
         const data = req.body
         try{
             const result = await worker.create(data)
             // render view
-
-            res.status(200).json({message: 'Berhasil',data: result})
+            res.redirect('/pembelian')
+            // res.status(200).json({message: 'Berhasil',data: result})
         }catch(err){
             res.status(400).json({message: 'error', error: err.message})
             console.log(err);
@@ -28,8 +28,13 @@ module.exports = {
     getAllPembelian : async (req, res)=>{
         try{
             const result = await worker.getAll()
+            const result2 = await worker.getData()  
+            const data = {
+                result,
+                result2
+            }
             res.render('pembelian', {
-                data: result
+                data: data
             })
 
             // res.status(200).json({message: 'Berhasil',data: result})
@@ -42,7 +47,6 @@ module.exports = {
         try{
             const result = await worker.getById({_id : req.params.id})
             // render view
-
             res.status(200).json({message: 'Berhasil',data: result})
         }catch(err){
             res.status(400).json({message: 'error', error: err.message})
@@ -78,9 +82,9 @@ module.exports = {
         }
         try{
             const result = await worker.delete(data)
-            // redirect view pembeilan
+            res.redirect('/pembelian')
 
-            res.status(200).json({message: 'Berhasil',data: result})
+            // res.status(200).json({message: 'Berhasil',data: result})
         }catch(err){
             res.status(400).json({message: 'error', error: err.message})
         }

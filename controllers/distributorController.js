@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Distributor = require('../models/distributorModel');
 
-
 router.get("/", async(req, res) => {
     const sess = req.session
     console.log(sess)

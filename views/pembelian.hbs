@@ -229,9 +229,32 @@
                                     <hr>
                                     <form action="/pembelian/add" method="post" novalidate="novalidate">
                                         <div class="form-group">
-                                            <label for="cc-payment" class="control-label mb-1">Nama</label>
-                                            <input id="cc-pament" name="nama" type="text" class="form-control"
-                                                aria-required="true" aria-invalid="false" placeholder="Nama">
+                                            <label for="x_card_code" class="control-label mb-1">Nama</label>
+                                                <div class="input-group">
+                                                    <select id="cc-exp" name="nama" type="text"
+                                                        class="form-control cc-exp" value="" data-val="true"
+                                                        {{!-- data-val-required="Mohon isi Kategori Produk" --}}
+                                                        {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
+                                                        placeholder="Produk" autocomplete="cc-exp">
+                                                        {{#each data.result2.distributor}}
+                                                        <option value="{{this}}">{{this}}</option>
+                                                        {{/each}}
+                                                    </select>
+                                                </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="x_card_code" class="control-label mb-1">Produk</label>
+                                                <div class="input-group">
+                                                    <select id="cc-exp" name="produk" type="text"
+                                                        class="form-control cc-exp" value="" data-val="true"
+                                                        {{!-- data-val-required="Mohon isi Kategori Produk" --}}
+                                                        {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
+                                                        placeholder="Produk" autocomplete="cc-exp">
+                                                        {{#each data.result2.produk}}
+                                                        <option value="{{this}}">{{this}}</option>
+                                                        {{/each}}
+                                                    </select>
+                                                </div>
                                         </div>
 
                                         <div class="row">
@@ -271,14 +294,22 @@
 
                                         <div class="form-group">
                                             <label for="cc-payment" class="control-label mb-1">Invoice</label>
-                                            <input id="cc-pament" name="invoice" type="text" class="form-control"
+                                            <input id="cc-pament" name="inv" type="text" class="form-control"
                                                 aria-required="true" aria-invalid="false" placeholder="Invoice">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="cc-payment" class="control-label mb-1">Status</label>
-                                            <input id="cc-pament" name="status" type="text" class="form-control"
-                                                aria-required="true" aria-invalid="false" placeholder="Status">
+                                            <label for="x_card_code" class="control-label mb-1">Status</label>
+                                                <div class="input-group">
+                                                        <select id="cc-exp" name="status" type="text"
+                                                            class="form-control cc-exp" value="" data-val="true"
+                                                            {{!-- data-val-required="Mohon isi Kategori Produk" --}}
+                                                            {{!-- data-val-cc-exp="Mohon isi dengan Huruf" --}}
+                                                            placeholder="Status" autocomplete="cc-exp">
+                                                            <option value="dibayar">dibeli</option>
+                                                            <option value="dikemas">diverivikasi</option>
+                                                        </select>
+                                                </div>
                                         </div>
 
                                         <div>
@@ -317,26 +348,26 @@
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>Distributor ID</th>
+                                                <th>Distributor</th>
                                                 <th>Nama</th>
                                                 <th>Jumlah</th>
                                                 <th>Harga Beli</th>
                                                 <th>Tanggal</th>
-                                                <th>Produk ID</th>
+                                                <th>Produk</th>
                                                 <th>Invoice</th>
                                                 <th>Status</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{#each data}}
+                                            {{#each data.result}}
                                             <tr>
-                                                <td>{{this.distributorId}}</td>
+                                                <td>{{this.distributorId.nama}}</td>
                                                 <td>{{this.nama}}</td>
                                                 <td>{{this.jumlah}}</td>
                                                 <td>{{this.harga_beli}}</td>
                                                 <td>{{this.tanggal}}</td>
-                                                <td>{{this.produkId}}</td>
+                                                <td>{{this.produkId.nama}}</td>
                                                 <td>{{this.inv}}</td>
                                                 <td>{{this.status}}</td>
                                                 <td>

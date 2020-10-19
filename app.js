@@ -44,7 +44,7 @@ app.use(session({
 app.use('/', userauth);
 app.use('/admin',admin);
 
-app.use('/example', exampleRouter); //SEMENTARA, SINCE WE DON'T HAVE EMIAL & PASSWORD
+// app.use('/example', exampleRouter); //SEMENTARRA, SINCE WE DON'T HAVE EMIAL & PASSWORD
 // app.use('/admin',exampleUtils,exampleRouter);
 
 app.use('/distributor', Distributor);
@@ -52,6 +52,7 @@ app.use('/kurir', Kurir);
 app.use('/agen', Agen);
 app.use('/kategori',kategori)
 app.use('/produk', routerProduk);
+
 app.use('/listUser', user);
 
 app.use('/pembelian', pembelian);
